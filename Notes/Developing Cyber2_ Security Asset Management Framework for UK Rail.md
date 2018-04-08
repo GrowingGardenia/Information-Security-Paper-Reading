@@ -74,30 +74,27 @@ Cherdantseva [9]调查并制定了信息系统各个组成部分需要遵循的�
 ## 致谢
 大学致力于开发网络安全框架的工作正在进行中，该框架可以展示为大学管理网络安全欧洲资助项目的能力。
 ## 参考文献
-[I] C. Pu,"A world of opportunities: CPS, lOT, and beyond", In Proceedings of the 5th ACM international conference on Distributed event-based system, 2011, July, pp. 229-230.
-[2] A. Cardenas, S. Amin, S. Sastry, "Research Challenges for the Security of Control Systems", In HotSec, 2008, July.
-[3] A. Cardenas, S. Amin, B. Sinopoli, A. Giani, A. Perrig, S.Sastry,"Challenges for securing cyber physical systems",
-In Workshop on future directions in cyber-physical systems security, 2009, July, p. 5.
-[4] Combs, M. Marcia,"lmpact of the Stuxnet Virus on Industrial Control Systems", XIII International Forummodern Information Society
-Formation Problems, Perspectives, Innovation Approaches,2011 ,5-1 O.
-[5] US Rail Attack, http://www.nextgov.com/cybersecurity/20 12/0 I/hackers-manipulatedrailway-computers-tsa-memo-says/504981
-[6] A. Effendi, R. Davis,"ICS and IT: Managing Cyber Security Across the Enterprise", In SPE Middle East Intelligent Oil and Gas Conference and Exhibition. Society of Petroleum Engineers,20 15 
-[7] Lee, Robert M., Michael J. Assante, and Tim Conway. "German Steel Mill Cyber Attack." Industrial Control Systems 30 (2014).
-[8] Network Rail. "Cyber Security Strategy September 2013".2013. https:l/www.networkrail.co.uklWorkArealDownloadAsseLaspx?id=3 0064788605
-[9] Y. Cherdantseva, J. Hilton,"A reference model of information assurance & security", In Availability, reliability and security (ares), 2013 eighth international conference on, pp. 546-555. IEEE, 2013.
-[10] R. Lewis, F. Fuchs, M. Pirker, C. Roberts, G. Langer,"Using ontology to integrate railway condition monitoring data", In Railway Condition Monitoring, 2006. The Institution of Engineering and Technology International Conference on (pp. 149-155). IET.
-[II] S. Kohli , J.M. Easton,"PCIPP: An Approach for Predictive Maintenance of Railway Assets", International
-[12]NlST,http://www.nist.gov/cyberframework/
+[I] C. Pu,"A world of opportunities: CPS, lOT, and beyond", In Proceedings of the 5th ACM international conference on Distributed event-based system, 2011, July, pp. 229-230.<br>
+[2] A. Cardenas, S. Amin, S. Sastry, "Research Challenges for the Security of Control Systems", In HotSec, 2008, July.<br>
+[3] A. Cardenas, S. Amin, B. Sinopoli, A. Giani, A. Perrig, S.Sastry,"Challenges for securing cyber physical systems",In Workshop on future directions in cyber-physical systems security, 2009, July, p. 5.<br>
+[4] Combs, M. Marcia,"lmpact of the Stuxnet Virus on Industrial Control Systems", XIII International Forummodern Information Society Formation Problems, Perspectives, Innovation Approaches,2011 ,5-1 O.<br>
+[5] US Rail Attack, http://www.nextgov.com/cybersecurity/20 12/0 I/hackers-manipulatedrailway-computers-tsa-memo-says/504981<br>
+[6] A. Effendi, R. Davis,"ICS and IT: Managing Cyber Security Across the Enterprise", In SPE Middle East Intelligent Oil and Gas Conference and Exhibition. Society of Petroleum Engineers,20 15 <br>
+[7] Lee, Robert M., Michael J. Assante, and Tim Conway. "German Steel Mill Cyber Attack." Industrial Control Systems 30 (2014).<br>
+[8] Network Rail. "Cyber Security Strategy September 2013".2013. https:l/www.networkrail.co.uklWorkArealDownloadAsseLaspx?id=3 0064788605<br>
+[9] Y. Cherdantseva, J. Hilton,"A reference model of information assurance & security", In Availability, reliability and security (ares), 2013 eighth international conference on, pp. 546-555. IEEE, 2013.<br>
+[10] R. Lewis, F. Fuchs, M. Pirker, C. Roberts, G. Langer,"Using ontology to integrate railway condition monitoring data", In Railway Condition Monitoring, 2006. The Institution of Engineering and Technology International Conference on (pp. 149-155). IET.<br>
+[II] S. Kohli , J.M. Easton,"PCIPP: An Approach for Predictive Maintenance of Railway Assets", International<br>
+[12]NlST,http://www.nist.gov/cyberframework/<br>
 [13]Tutcher, J., 2014, October. Ontology-driven data integration for railway asset monitoring applications. In Big Data (Big Data), 2014
-IEEE International Conference on (pp. 85-95). IEEE.
-[14] M. C. Morris, J. M. Easton, C. Roberts,"Ontology Domain", 7th International Joint Conference on Discovery, Knowledge Engineering, and Management,20 15
-in the Rail Knowledge Knowledge
+IEEE International Conference on (pp. 85-95). IEEE.<br>
+[14] M. C. Morris, J. M. Easton, C. Roberts,"Ontology Domain", 7th International Joint Conference on Discovery, Knowledge Engineering, and Management,20 15 in the Rail Knowledge Knowledge<br>
 [15] A. Buldas, P. Laud, 1. Priisalu, M. Saarepera,1. Willemson," Rational choice of security measures via multi-parameter attack
-Trees",ln Critical Information Infrastructures Security,2006, pp. 235- 248, Springer Berlin Heidelberg
-[16] R. Bloomfield, I. Gashi,R. Stroud,"How secure is ERTMS?", In Computer Safety, Reliability, and security , 2008, pp. 247-258, Springer Berlin Heidelberg.
-[17] REDTS,https:l Iredislabs.coml
-[18] M. Abrams, J. Weiss,"Malicious control system cyber- security attack case study-Maroochy Water Services", Australia. McLean, VA: The MITRE Corporation,2008.
-[19] A. Cardenas, A. Saurabh, S. Sastry, "Secure control: Towards survivable cyber-physical systems.", In The 28th International Conference on Distributed Computing Systems Workshops, pp. 495- 500. IEEE, 2008.
-[20] L. Obrst,P. Chase, R. Markeloff," Developing an Ontology of the Cyber Security Domain", In STIDS, 2012, October,pp. 49-56.
-[21] S. Caltagirone, A. Pendergast, C. Betz,"The diamond model of intrusion analysis",Center for cyber intelligence analysis and threat research hanover md, 2013.
-[22] R. Evans, 1. Easton, and C. Roberts, "SCEPTICS: A Systematic Evaluation Process for Threats to Industrial Control Systems", in Press, World Congress on Railway Research, 29th May - 2nd June 2016, Milan, Italy.
+Trees",ln Critical Information Infrastructures Security,2006, pp. 235- 248, Springer Berlin Heidelberg<br>
+[16] R. Bloomfield, I. Gashi,R. Stroud,"How secure is ERTMS?", In Computer Safety, Reliability, and security , 2008, pp. 247-258, Springer Berlin Heidelberg.<br>
+[17] REDTS,https:l Iredislabs.coml<br>
+[18] M. Abrams, J. Weiss,"Malicious control system cyber- security attack case study-Maroochy Water Services", Australia. McLean, VA: The MITRE Corporation,2008.<br>
+[19] A. Cardenas, A. Saurabh, S. Sastry, "Secure control: Towards survivable cyber-physical systems.", In The 28th International Conference on Distributed Computing Systems Workshops, pp. 495- 500. IEEE, 2008.<br>
+[20] L. Obrst,P. Chase, R. Markeloff," Developing an Ontology of the Cyber Security Domain", In STIDS, 2012, October,pp. 49-56.<br>
+[21] S. Caltagirone, A. Pendergast, C. Betz,"The diamond model of intrusion analysis",Center for cyber intelligence analysis and threat research hanover md, 2013.<br>
+[22] R. Evans, 1. Easton, and C. Roberts, "SCEPTICS: A Systematic Evaluation Process for Threats to Industrial Control Systems", in Press, World Congress on Railway Research, 29th May - 2nd June 2016, Milan, Italy.<br>
