@@ -171,7 +171,7 @@ CSMS系统的组件可以在下面的图2看到。
 以正式方式管理风险是至关重要的，涉及重要学科专家的所有阶段：软件，网络，RAM和项目工程师，ISE，维护人员和培训人员。通过一个小的关键组开始风险评估过程有时更实际，然后允许更多的受众在正式审查过程（记录的评论和响应）下审查产出。 
 
 ### 5.4 设计
- 
+  
 为了让系统及其运行环境得到充分理解，以下人员必须尽早面对面交流：项目工程师，ISE，供应商的硬件和软件设计人员，操作员和维护人员，这一点很重要。如果所有参与者都尝试降低系统复杂性（更容易保护），那么这种方法将效果最佳，在架构和软件设计方面提出挑战，并在保护系统的情况下对设计决策采取务实的态度。这样做的例子可能是：避免使用补丁，不使用TCP / IP或在边界使用空隙（数据二极管）。
  
 最好的设计包括提供多级安全保护的“纵深防御”方法。这将减少任何违反对系统性能或可用性产生重大影响的可能性。整个生命周期的设计考虑因素必须针对潜在的补丁进行计在防火墙固件中，与安全性直接相关或具有安全隐患，即如果操作系统的补丁程序改变了防火墙的管理方式，那么风险评估或维护过程是否需要更新？
@@ -205,7 +205,7 @@ CSMS系统的组件可以在下面的图2看到。
 该系统生命周期中的关键设计，交付和运营机构必须以经济高效且可行的方式管理所涉及的硬件和软件的安全性，并且有权在正确的时间以正确的方式使事情发生，而不是只是为了适应供应商，安装人员或维护人员的需求。尽管采用了多少种控制措施，但系统越难保证，出错的可能性就越大。
 ## 致谢
 作者要感谢Interfleet Technology Limited的Andrew Love（列车控制与信号主管）和Carine Marin（铁路控制系统ETCS负责人），伦敦地铁工程董事会的Anthony Cross（控制和信息资产工程师）和LeeJohn伦敦地下资本项目管理局的艾伦（项目工程经理）对他们的支持和有益的评论和建议。
-References 
+## References 
 [1] EN 50126 Railway applications - The specification and demonstration of reliability, availability, maintainability and safety (RAMS).<br> 
 [2] EN 50129 Railway applications - Communications, signalling and processing systems - Safety related electronic systems for signalling. <br>
 [3] IEC62443 (was ISA-99) Industrial Communications Networks – Network and System Security. <br>
