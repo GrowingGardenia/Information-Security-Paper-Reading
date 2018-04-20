@@ -1,4 +1,4 @@
-![2-4](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/2-4.png)
+
 # 铁路控制系统的信息安全
 D B Milligan*
 * Interfleet Technology Limited UK, (part of SNC Lavalin Inc)
@@ -38,7 +38,7 @@ Milligan.D@Interfleet.co.uk
 
 ### 2.1系统
 首要任务是确定系统及其预期的使用模式，并画出简单的网络图（在[4]的A2.3.3.8.4部分中建议）。 它可能如下图所示（图1）：
-
+![3-1](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/3-1.png)
 图1：铁路控制系统实例
 
 这必须在概念设计阶段的早期完成，包括识别所有功能需求，所有接口，操作系统，网络设备，通信协议，设备驱动程序和应用软件。 项目交付工程师是整个交付安全RCS的“支持者”，必须在供应商的系统架构师的这个阶段紧密合作。
@@ -73,7 +73,7 @@ Milligan.D@Interfleet.co.uk
 
 ### 3.2 方法
 CSMS系统的组件可以在下面的图2看到。
-
+![3-2](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/3-2.png)
 图2：RCS网络安全管理系统模型
 
 建立CSMS的模型基于IEC62443安全标准的第2-1部分[4]的附录B（并且参考信息安全管理标准IEC17799：2005 [6]及其后续IEC27001 [7]）。
@@ -81,7 +81,7 @@ CSMS系统的组件可以在下面的图2看到。
 项目成本的限制可能会迫使安全设计“负责人”来简化CSMS--这看起来很鲁莽，但通常情况是这样。 这在NIST的“工业控制系统（ICS）安全指南”[8]中已经注明，并且必须在该CSMS中内置最经济，实用和有效的过程。
 
 ### 3.3 初始系统的安全性
-
+![3-3](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/3-3.png)
 图3：初始RCS网络图
 如图3所示，开发了一个更详细的网络图，其中显示了一些初始安全功能（物理控制，区域，管道），以便既获取初始快照，又帮助确定CSMS总体风险评估考虑因素。
 
@@ -95,13 +95,14 @@ CSMS系统的组件可以在下面的图2看到。
 
 安全风险的关键在于设定风险的“频率”(‘frequency’ of risks occurring )和这些风险的“严重程度”(‘severities’ of those risks)。 下表显示了频率和严重程度的典型定义。
 
-
+![3-4](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/3-4.png)
 表1安全性RA的频率范围
-
+![3-5](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/3-5.png)
+![3-6](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/3-6.png)
 表2安全RA的严重性范围
  
 这些标准必须考虑系统可用性，安全影响（尽管安全流程有助于正式解决这些风险）以及商业和商业影响（供应商违规，信誉损害，如果发生违规行为时进行正式调查的成本）。 在RA之前进行量化是实现“实际控制措施”的关键。
-
+![3-7](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/3-7.png)
 图4显示控制措施的摘录
 上面的图4用于向项目和运营团队演示如何将安全性主动设计到RCS中，并通过安全RA中确定的控制措施进行了改进。 在项目中多次重新访问此RA非常重要，并将其交给运营商，以便他们可以继续审查和管理剩余风险。
 ## 4 挑战和局限
