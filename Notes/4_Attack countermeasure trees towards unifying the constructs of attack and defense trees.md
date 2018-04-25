@@ -1,3 +1,4 @@
+
 # ACT : Towards unifying the constructs of attack and defense trees
 # 攻击对策树的构造
 Arpan Roy, Dong Seong Kim and Kishor S. Trivedi,
@@ -17,6 +18,7 @@ Department of Electrical & Computer Engineering, Duke University, Durham, NC 277
 	攻击场景的生成和分析以及攻击对策场景都是使用缩略图自动生成的，
 	概率分析（使用诸如攻击和安全投资成本，Birnbaum重要性度量，系统风险，攻击影响，ROI和ROA等措施）以综合方式进行（如图1所示），
 ![4-1](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-1.png) 
+
 图1.使用ACT进行分析
 	利用结构和Birnbaum重要性措施优先考虑攻击事件和对策
 	采用三种案例研究（ACT针对BGP攻击，ACT针对SCADA攻击，ACT针对恶意内部攻击），证明了将对策纳入ACT的结果[10]。
@@ -29,6 +31,7 @@ Weiss的威胁逻辑树[17]和Amoroso的威胁树[18]标志着使用决策树来
 ## 3.攻击对抗树
 ### 3.1. 准备
 ![4-2](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-2.png) 
+
 A_k  一次袭击事件
 D_k  一个检测事件
 M_k  一个缓解事件
@@ -54,6 +57,7 @@ c_(〖CM〗_k )  对抗CMK的安全投资成本
 在这一小节中，介绍了ACT的基本形式。在ACT中，存在三种不同类别的事件：攻击事件（例如，安装击键记录器），检测事件（例如，检测击键记录器）和缓解事件（例如，移除击键记录器）。图2（a）显示了一个简单的ACT攻击事件。在目标节点成功攻击的概率的相应表达式如下式所示。
 P_goal=pA (1)
 ![4-3](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-3.png) 
+
 图2.（a）一次攻击事件的ACT，（b）一次攻击和一次检测事件的ACT，（c）一次攻击和多次检测事件的ACT，（d）一次攻击，一次检测和一次缓解事件的ACT ，（e）一次攻击，多次检测和一次缓解事件的ACT，（f）一次攻击，一次检测和多次缓解事件的ACT，（g）一次攻击的ACT，m次检测和n次缓解事件，以及（h）ACT一次攻击和多对检测和缓解事件
 
 在图2（b）中，使用了一个攻击事件和一个检测机制。成功的未被发现的攻击的概率的对应表达式是：
@@ -65,15 +69,20 @@ Pgoal = pA（1-pD + pD（1-pM））= pA（1-pD×pM））（4）
 事实上，如果需要，这个概率可以分成两部分：未检测到的攻击的概率pUD = pA（1-pD）以及检测到但未发起攻击的概率pDUM = pApD（1-pM）。
 图2（e）显示了一个ACT有一个攻击事件，n个检测事件和一个缓解事件，并且成功攻击概率的相应等式在式（5）。对于图2（e）中的ACT，未检测到攻击的相应概率PUD=pA∏_(i=1)^n▒〖(1-〖pD〗_i)〗为，并且检测到攻击但未释放的相应概率为PDUM=pA(1-∏_(i=1)^n▒〖(1-〖pD〗_i)×(1-pM))〗。
 ![4-4](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-4.png) 
+
 图2（f）显示了一个ACT，其中包含一个攻击事件，一个检测事件和n个缓解事件。式（6）给出了相应的成功攻击概率。对于图2（f）中的ACT，未检测到攻击的相应概率为pUD = pA（1 - pD），并且检测到攻击但未释放的相应概率为PDUM=pApD∏_(i=1)^n▒〖(1-〖pM〗_i)〗。
 ![4-5](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-5.png)
+
 图2（g）显示了一个ACT，其中包含一个攻击事件，m个检测事件和n个缓解事件。式（7）给出了相应的成功攻击概率。
 ![4-6](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-6.png)
 
+
 表I.攻击成功概率的公式
 ![4-7](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-7.png)
+
 图2（h）显示了一个ACT有一个攻击事件和n对检测和缓解事件。引发缓解的性质取决于检测到的入侵的性质。式（8）显示了Pgoal的相应表达式。未检测到攻击的相应概率为PUD=pA∏_(i=1)^n▒〖(1-〖pD〗_i)〗，并且检测到但未释放攻击的相应概率为PDUM=pApD∏_(i=1)^n▒〖(1-〖pD〗_i 〖×pM〗_i)〗-pA∏_(i=1)^n▒〖(1-〖pD〗_i)〗
 ![4-8](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-8.png)
+
 除AND和OR门之外，ACT还允许k-outof-n门（具有相同或不同的输入）。表I列举了ACT中AND，OR门和k-n门输出概率的公式。
 
 
@@ -82,6 +91,7 @@ Pgoal = pA（1-pD + pD（1-pM））= pA（1-pD×pM））（4）
 #### 3.3.1. 定性分析
 使用ACT的定性分析为我们提供了最小化和结构重要性度量。
 ![4-9](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-9.png)
+
 ##### Mincut（最小切入点）分析。
 在AT和ACT中，顶级事件都与所有缩略图的集合相关联。 AT的Mincut表示攻击场景[23]，而ACT的则表示攻击对策场景。我们给出了一个用于BGP攻击的例子[14]（图3中所示的“重置BGP会话”）及其相应的ACT与对策[24]（如图4所示）。其中，所采用的对策包括路由跟踪 [25]作为欺骗TCP重置消息和序列号随机化检测机制之一[24]作为相应的缓解技术。 ACT中的顶（或goal）事件也可以表示为叶节点事件的布尔函数-（Φ（X））。在等式（9），-Φ（X）给出了图3中AT的互补布尔结构函数，其中X是ACT的状态向量，xAi是布尔变量，当事件Ai发生时xAi = 1，否则xAi = 0。图3中AT的最小切换为：{（A111，A12），（A1121，A12），（A1122，A12），（A1223，A12），（A2）}。
 -Φ（X）= xA111xA12 + xA1121xA12 + xA1122xA12 + xA1123xA12 + xA2 （9）
@@ -92,24 +102,30 @@ X =（xA1 xA2 ... xAk-1 xAk xAk + 1 ... xAn）
 X'=（xA1 xA2 ... xAk-1 xAk （-xAk + 1 ）... xAn）
 ACT中的攻击事件（Ak）的结构重要性度量被定义为状态向量的归一化计数，其中该分量与布尔结构函数相关。等式（1）中显示了IST Ak的相应表达式（10）。
 ![4-10](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-10.png)
+
 当发生与攻击事件相关的布尔值时，攻击事件（Ak）被认为与特定状态向量X相关，Ak将-Φ（X）的值从1变为0.换句话说，Ak与状态向量X如果(-Φ（X）Ak) –(- Φ（X'）Ak )= 1。一旦确定了系统中最关键的事件，就可以对其进行修补，或者可以强制执行组件的适当检测和缓解。
 
 #### 3.3.2. 概率分析
 ![4-11](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-11.png)
+
 在第3.2节中讨论了ACT中成功攻击概率的计算。对于ACT，可以计算出成功攻击的概率，该概率可以进一步分解为未检测到攻击的概率以及检测到但未释放攻击的概率。当提供诸如攻击概率，成本等参数值时，可以使用ACT进行概率（或定量）分析。使用ACT的定量分析可以从两个不同的角度来看：攻击者的观点和防御者（或安全分析师）的观点。攻击成本和ROA等措施反映了攻击者的视角，而安全投资成本，风险，影响和投资回报率代表防守者的视角。
 ##### 成本计算。
 在ACT中，成本可能有两种类型：攻击成本和安全投资成本。使用表II [29]中的表达式计算ACT（Cattacker）中没有重复事件的攻击成本。在ACT中，攻击的成本是与门的输入事件的成本的总和，而它是用于或门的输入事件的成本的最小值。 k-n门的攻击成本是k门成本最低的输入事件的总和。对于包含一个或多个重复事件的ACT（如图5所示），我们使用一个简单的过程来计算攻击成本。
  SHARPE [13]可以用来生成ACT的最小切割。最小切割的攻击成本可以由最小切割中每个攻击事件的攻击成本总和给出。选择成本最低的Mincut的攻击成本作为ACT的攻击成本。在图5的情况下，ACT切入点是{（A1，A2），A3}，因此对应的Cattacker = min {cA1 + cA2，cA3}。在OR门的情况下，我们采用“恐慌方法”计算输出端的Cattacker，这意味着在OR门的不同输入事件中，我们选择要传播的攻击代价的最小值。我们这样做是因为攻击者的能力和偏好不能事先知道，并且攻击者被认为是最好的出路（即最低成本攻击）。出于同样的原因，我们选择最小成本mincut，同时计算具有重复事件的ACT的Cattacker。
 ![4-12](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-12.png)
+
 ACT的安全投资成本是通过总结ACT中反制措施的安全投资成本来计算的。同样使用ACT，可以根据攻击者的资源约束（例如攻击成本）构建可行的攻击场景集合。在SecurITree [30] AT分析工具中称为AT的“基于能力的修剪”。如果提供总攻击成本作为攻击者的资源约束，则可以确定攻击者可以成功利用其资源（成本）约束的一小部分切入点（或攻击情景的子集）。
 ##### 影响计算。
 在ACT中，我们使用与每个攻击事件相关的影响[31]的确切值，而不是追求用于影响计算的缩放方法（例如，以1-10的比例进行标准化）。即使对策不直接影响影响价值，对策也会降低影响的预期价值。表2总结了不重复事件的ACT中不同门的冲击计算。如果ACT中存在重复事件，我们将遵循与成本计算中使用的过程类似的过程。我们首先找到ACT的缩影。 mincut的影响是mincut中攻击事件的影响值的总和。具有最高影响值的最小切割的影响被选为ACT的影响。例如，对于图5（a）中的ACT，由于最小切割是{（A1，A2），A3}，Igoal = max {iA1 + iA2，iA3}。在OR门的情况下，我们再次假定在输出端计算Igoal的最坏情况，这意味着在OR门的不同输入事件中，我们选择要传播的影响的最大值。我们这样做是因为攻击者的能力和偏好不能事先知道，安全分析人员必须做好准备以应对最糟糕的后果（即最大影响攻击）。出于同样的原因，我们在计算具有重复事件的ACT的Igoal时选择最大影响最小切割。
 ![4-13](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-13.png)
+
 ##### Birnbaum重要性度量。
 当ACT节点的攻击/防御概率已知时，Birnbaum重要性度量[32]（也称为故障树的“可靠性重要性度量”）用于优先防御机制来抵制攻击事件。攻击事件的Birbaum重要性度量表示在Ak上ACT节点的攻击概率发生微小变化所导致的目标攻击概率的变化。 Birnbaum对攻击事件Ak的重要性度量定义如下：
 ![4-14](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-14.png)
+
 SHARPE可以用来计算I_(A_k)^B。
 ![4-15](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-15.png)
+
 ##### 风险计算。
 在ACT的背景下，风险可以指两种不同的措施，即（i）对攻击者有风险[33]和（ii）对系统的风险[34]。攻击者的原子攻击风险是指检测到原子攻击的概率[33]。 AttackTree + AT分析工具[35]将此类风险称为攻击者的“接受风险”。由于我们在3.2节讨论Pgoal计算中原子攻击的检测概率，本小节中我们讨论了系统的风险。系统风险是指系统对特定攻击场景的风险。在这方面，需要考虑两个措施。一个是攻击场景可以给系统带来的伤害量（Igoal），另一个是攻击成功的概率（Pgoal）。结合这两者，系统的风险可以被定义为影响的预期值。 ACTs的系统风险表述是：
 Risksys = Pgoal×Igoal（12）
@@ -120,8 +136,10 @@ Risksys = Pgoal×Igoal（12）
 ##### ROA和ROI计算。
 为了量化攻击者和防御者之间的竞争性质，经济学领域的两个度量标准已经适用于安全情景。攻击回报率（ROA）[8,9]是一个指标，旨在衡量特定攻击对攻击者的好处。与攻击成本不同，ROA随着特定对策的应用而改变。 ROA [4]被定义为：
 ![4-16](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-16.png)
+
 接下来我们讨论投资回报率（ROI）的量化[6]。 ROICMi的基本定义是通过实施CMi获得的利润（从而表明该对策的效率）。反制措施的投资回报CMi是ACT攻击的影响，由CMi引起的ACT目标攻击概率（△PgoalCMi）下降和CMi安全投资成本（cCMi）的函数。根据Sonnenreich对投资回报的定义[6]，在ACT的背景下，我们有：
 ![4-17](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-17.png)
+
 请注意，ROICMi≥-1。
 
 ## 4.实施
@@ -131,17 +149,23 @@ Risksys = Pgoal×Igoal（12）
 图6（a）显示了结构重要性度量的变化，图6（c）显示了由于实施对策CMi，BGP ACT中攻击事件Ai的Birnbaum重要性度量的变化。从图6（c）和图6（d）中可以看出，Pgoal的最大降低是由于实施与具有最高值I_(A_k)^B的攻击事件相关的对策而引起的。例如，在没有防御的BGP ACT（或BGP AT）中，攻击事件A1（'发送RESET消息'）的IB值最高，导致首先执行CM1（'Traceroute'）。 Pgoal的相应减少量（如图6（c）所示）是目前所有对策的最大值。因此，针对具有较高I_(A_k)^B值的攻击事件（Ai）应采取对策措施（CMi）的优先次序。类似地，我们可以从图6（a）和图6（b）中观察到，实施具有更高I_(A_k)^B的对策应该被优先考虑。
 所有三种ACT的对应节点的输入参数值如表3所示，所有三种ACT的攻击节点的输入参数值如表4所示。
 ![4-18](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-18.png)
+
 ![4-19](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-19.png)
+
 图9（a）显示了BGP ACT（有和没有对策），图9（b）显示了Pgoal的SCADA ACT（有和没有对策），图9（c）显示了Pgoal的MI ACT（有和没有对策） ACT中所有叶子节点的攻击值的概率在[0,1]范围内一起变化。从图9（a）我们发现，BGP ACT的Pgoal值随着检测机制的结合而降低（Pgoal = PUD）。在ACT中只有检测机制，缓解措施被认为是完美的，即它们以概率1工作。因此，通过在BGP ACT中引入缓解措施（不完善的缓解措施），Pgoal会增加（Pgoal = PUD + PDUM）。 SCADA ACT只有攻击和缓解事件。这里假定检测是完美的，即，所有pDi = 1的Pgoal = PUD + PDUM。
 从图9（b）中，我们发现Pgoal随SCADA ACT中的缓解措施而减少。类似地，从图9（c）我们发现MI ACT的Pgoal值随着检测机制的结合而降低，然后随着缓解措施（不完全缓解措施）的结合而增加。
 ![4-20](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-20.png)
+
 图10（a）显示了BGP ACT（有和没有对策）的系统风险（Risksys），其叶节点（pA1123）的攻击概率一起在[0,1]范围内变化，叶节点A1123（iA1123 ）在0-3×105 $范围内均匀变化。观察到Risksys随着检测机制的结合而减少（假设完美缓解），然后随着ACT中缓解措施的结合而增加。图10（b）显示SCADA ACT的Risksys（有和没有对策），叶节点pS1和pG1的攻击概率一起在[0,1]范围内变化，叶节点IS1和IG1的影响值一起变化范围0-3×105 $。观察Risksys在SCADA ACT中采用对策（缓解措施）后会降低的表面。图10（c）显示MI ACT（有和没有对策）的系统风险（Risksys），在叶节点（pA31）处的攻击概率一起在[0,1]范围内变化，叶节点A31（iA31 ）在0-3×105 $范围内均匀变化。从表面上看，对于BGP，SCADA和MI ACT，Risksys随着叶节点处攻击值的概率而增加。它也与相应的ACT的Igoal值成正比。
 ![4-21](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-21.png)
+
 系统中不同组件的Risksys也可以使用其ACT进行比较。图11（a）显示了针对SCADA ACT的Risksys针对攻击概率值（从0到1一致范围）以及发生器节点G1，G2和G3的影响值（均匀范围从0-2×105 $），而图11（ b）显示了针对SCADA ACT的Risksys针对攻击概率值（范围从0到1一致）以及传感器节点S1，S2和S3的影响值（均匀范围从0-2×105 $）。从表面看，传感器的风险要高于发电机。
 ![4-22](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-22.png)
+
 图12（a）显示了BGP ACT（有和没有对策）的ROA，叶节点A1123的攻击代价在0-200 $范围内一致地变化，并且叶节点A1123的攻击影响值在0-3× 105 $。与Risksys一样，BGP ACT的ROA随着检测机制的结合而降低，然后随着ACT中的缓解技术（不完全缓解）的结合而增加。图12（b）显示了SCADA ACT（有和没有对策）的ROA，叶节点S1和G1的攻击代价一起在0-200 $范围内变化，叶节点S1和G1的冲击值一起变化在范围0-3×105 $。 SCADA ACT的ROA随着对策的并入而下降。图12（c）示出了MI ACT的ACT（有和没有对策）的ROA，叶节点A31的攻击成本在0-200 $范围内均匀变化，并且叶节点A31的攻击影响值在0-3× 105 $。从表面我们可以看到，对于BGP，SCADA和MI ACT，ROA值与Igoal值成正比，与相应ACT的Cattacker值成反比。
 图13（a）显示了BGP ACT的Pgoal，图13（b）显示了SCADA ACT的Pgoal值，图13（c）显示了ACT对所有对策有效的概率（pCMi）在[0,1]范围内一起变化。对于BGP，SCADA和MI ACT，可以看出Pgoal随着pCMi的增加而下降。此外，CM1和CM12对BGP ACT的Pgoal具有相同的效果，并且它们的图重叠。
 ![4-23](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/4-23.png)
+
 图14（a）显示了BGP ACT中每种对策的ROI，图14（b）显示了SCADA ACT的对策（开关HMI）和（重启G3）的ROI，图14（c）显示了MI ACT中每种对策的ROI对策的安全投资成本（cCMi）在0-100 $范围内均匀变化，相应的pCMi在[0,1]范围内均匀变化。对于所有对策，我们观察到对于pCMi = 0，ROI = -1。从图14（a）可以看出，来自CM2的ROI超过了CM1或CM12。这使安全分析师能够优先考虑在BGP ACT中实施CM2。对于SCADA ACT，冬季（重启G3）的ROI超过（开关HMI）的ROI。与MI ACT类似，CM412的投资回报率超过了CM12和CM123的投资回报率，没有这些，就没有什么可以说话的。
 ## 6.结论
 在本文中，我们提出了攻击对策树（ACT），这是一种非状态空间模型，它允许我们对系统的安全性进行定性和概率分析。我们考虑到攻击和对策（以检测机制和缓解技术的形式）。检测和缓解不仅可以放置在叶节点，而且可以放置在任何中间节点。在结构和Birnbaum重要性措施的帮助下，可以优先考虑ACT中的事件。采用三种案例研究（ACT针对BGP攻击，ACT针对SCADA攻击，ACT针对恶意内部攻击），展示了将对策纳入ACT的效果。在未来的工作中，我们将探讨如何在非状态空间ACT中使用ACT来快速有效地计算大型系统的最佳防御策略，其中使用单目标和多目标优化，给定一定的安全限制（例如，安全投资成本，投资回报率）模型，同时继续避免状态空间爆炸问题。
