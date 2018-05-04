@@ -1,8 +1,8 @@
 # Why We Cannot (Yet) Ensure the Cyber-Security of Safety-Critical Systems
 # 为什么我们不能确保安全关键系统的网络安全
-# Chris Johnson1 
-# University of Glasgow 
-# Glasgow, UK
+Chris Johnson1 
+University of Glasgow 
+Glasgow, UK
 
 ## 摘要：
 安全关键系统的网络安全性正在不断增加。包括Linux在内的Commercial Off Shelf（COTS）软件，航空，航海，铁路和发电基础设施的专业VOIP应用和基于卫星的增强系统的引入已经造成了常见的漏洞。因此，现在有更多的人拥有识别和利用安全关键系统漏洞所需的技术技能。这是第一次有可能出现跨模式攻击，导致未来的“网络风暴”。公私伙伴关系未能建立关键安全应用的网络安全，加剧了这种情况。财政危机阻止了政府吸引并保留有能力的监管机构在安全和网络安全的交叉点。特别是，我们认为安全（safety）和安全性(security)之间的表面相似性导致安全(security)策略无法在安全(safety)关键系统中实施。现有的基于官方的安全标准，例如ISO27k系列，不能轻易地与IEC61508或ISO26262等标准集成。诸如IEC 62443之类的混合标准缺乏可信的验证。迫切需要超越高层次的政策，解决威胁安全关键系统网络安全的更为详细的工程挑战。特别是，我们考虑网络安全(security)问题如何破坏传统形式的安全工程(safety)，例如通过使传统形式的风险评估失效。我们还总结了安全（safety）问题阻碍传统网络安全(security)机制（包括入侵检测系统）部署的方式。
@@ -44,7 +44,6 @@
 
 ## 3.安全技术在网络安全中的失败(The Failures of Safety Techniques in Cyber-Security)
 上一节指出，由于安全技术经常受到网络安全问题的影响，因此迫切需要集成的工具和专门知识。相比之下，以下段落认为现有的网络安全策略不能很容易地应用于安全相关的领域。我们着重于三个例子:
-
 1.传统的入侵检测系统破坏了复杂应用的安全性;
 2.其次，传统办公系统的现有取证指导将导致安全关键系统的寿命缩短;
 3.最后，许多SCADA环境的气隙架构破坏了现有的安全管理原则。
@@ -78,13 +77,13 @@ NIST（2012）主张在关键应用程序中使用几种不同的入侵检测系
 ## References 
  
 ENISA, (2006), Risk Management: Implementation principles and Inventories for Risk Management/Risk Assessment methods and tools, Conducted by the Technical Department of ENISA, Section Risk Management, Heraklion, Greece, June 2006. 
-EUROCONTROL (2006), Safety Case Development Manual, Technical report DAP/SSH/091, Brussels, Belgium. <\br>
+EUROCONTROL (2006), Safety Case Development Manual, Technical report DAP/SSH/091, Brussels, Belgium. 
 Naedele, M. (2007), Addressing IT Security for Critical Control Systems, Proceedings of the 40th Hawaii International Conference on System Sciences, IEEE Computer Society. 
 Johnson, C.W., (2003), Failure in Safety-Critical Systems: A Handbook of Accident and Incident Reporting, University of Glasgow Press, Glasgow, Scotland, ISBN 0-85261-784-4, available in in electronic form. 
 Johnson, C.W., (2015), Contrasting Approaches to Incident Reporting in the Development of Security and Safety-Critical Software.  In F. Koorneef and C. van Gulijk (eds.), SAFECOMP 2015, Springer Verlag, Heidelberg, Germany, 400-409, LNCS 9337, ISBN 978-3-319-24254-5. 
 Johnson, C.W., (2015a), Barriers to the Use of Intrusion Detection Systems in Safety-Critical Applications.  In F. Koorneef and C. van Gulijk (eds.), SAFECOMP 2015, Springer Verlag, Heidelberg, Germany, 375-384, LNCS 9337, ISBN 978-3-319-24254-5.  
 Piètre-Cambacédès, L. and Bouissou, M., (2010), Modelling Safety and Security Interdependencies with BDMP (Boolean logic Driven Markov Processes). IEEE International Conference on Systems Man and Cybernetics (SMC), 10-13 Oct. 2010, 2852 – 2861. 
-Spitzner, L. (2002), Honeypots tracking hackers. Addison-Wesley. pp. 68–70. ISBN 0-32110895-7. <\br>
+Spitzner, L. (2002), Honeypots tracking hackers. Addison-Wesley. pp. 68–70. ISBN 0-32110895-7. 
 U.S. Department of Justice (2004), Forensic Examination of Digital Evidence: A Guide for Law Enforcement.  
 U.S. Department of Justice (2008), Office of Justice Programs, Electronic Crime Scene Investigation: A Guide for First Responders, Second Edition, Washington DC, 2008. http://www.nij.gov/publications/ecrime-guide-219941/ 
 U.S. National Institute of Standards and Technology (NIST, 2012), Computer Security Incident Handling Guide (Draft), Special Publication 800-61 Revision 2 (Draft), Gaithersburg, Maryland.
