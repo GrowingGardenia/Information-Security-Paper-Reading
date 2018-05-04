@@ -1,7 +1,7 @@
 # Why We Cannot (Yet) Ensure the Cyber-Security of Safety-Critical Systems
 # 为什么我们不能确保安全关键系统的网络安全
-Chris Johnson1 
-University of Glasgow 
+Chris Johnson1 <br>
+University of Glasgow <br>
 Glasgow, UK
 
 ## 摘要：
@@ -76,14 +76,14 @@ NIST（2012）主张在关键应用程序中使用几种不同的入侵检测系
 
 ## References 
  
-ENISA, (2006), Risk Management: Implementation principles and Inventories for Risk Management/Risk Assessment methods and tools, Conducted by the Technical Department of ENISA, Section Risk Management, Heraklion, Greece, June 2006. 
-EUROCONTROL (2006), Safety Case Development Manual, Technical report DAP/SSH/091, Brussels, Belgium. 
-Naedele, M. (2007), Addressing IT Security for Critical Control Systems, Proceedings of the 40th Hawaii International Conference on System Sciences, IEEE Computer Society. 
-Johnson, C.W., (2003), Failure in Safety-Critical Systems: A Handbook of Accident and Incident Reporting, University of Glasgow Press, Glasgow, Scotland, ISBN 0-85261-784-4, available in in electronic form. 
-Johnson, C.W., (2015), Contrasting Approaches to Incident Reporting in the Development of Security and Safety-Critical Software.  In F. Koorneef and C. van Gulijk (eds.), SAFECOMP 2015, Springer Verlag, Heidelberg, Germany, 400-409, LNCS 9337, ISBN 978-3-319-24254-5. 
-Johnson, C.W., (2015a), Barriers to the Use of Intrusion Detection Systems in Safety-Critical Applications.  In F. Koorneef and C. van Gulijk (eds.), SAFECOMP 2015, Springer Verlag, Heidelberg, Germany, 375-384, LNCS 9337, ISBN 978-3-319-24254-5.  
-Piètre-Cambacédès, L. and Bouissou, M., (2010), Modelling Safety and Security Interdependencies with BDMP (Boolean logic Driven Markov Processes). IEEE International Conference on Systems Man and Cybernetics (SMC), 10-13 Oct. 2010, 2852 – 2861. 
-Spitzner, L. (2002), Honeypots tracking hackers. Addison-Wesley. pp. 68–70. ISBN 0-32110895-7. 
-U.S. Department of Justice (2004), Forensic Examination of Digital Evidence: A Guide for Law Enforcement.  
-U.S. Department of Justice (2008), Office of Justice Programs, Electronic Crime Scene Investigation: A Guide for First Responders, Second Edition, Washington DC, 2008. http://www.nij.gov/publications/ecrime-guide-219941/ 
+ENISA, (2006), Risk Management: Implementation principles and Inventories for Risk Management/Risk Assessment methods and tools, Conducted by the Technical Department of ENISA, Section Risk Management, Heraklion, Greece, June 2006. <br>
+EUROCONTROL (2006), Safety Case Development Manual, Technical report DAP/SSH/091, Brussels, Belgium.  <br>
+Naedele, M. (2007), Addressing IT Security for Critical Control Systems, Proceedings of the 40th Hawaii International Conference on System Sciences, IEEE Computer Society.  <br>
+Johnson, C.W., (2003), Failure in Safety-Critical Systems: A Handbook of Accident and Incident Reporting, University of Glasgow Press, Glasgow, Scotland, ISBN 0-85261-784-4, available in in electronic form.  <br>
+Johnson, C.W., (2015), Contrasting Approaches to Incident Reporting in the Development of Security and Safety-Critical Software.  In F. Koorneef and C. van Gulijk (eds.), SAFECOMP 2015, Springer Verlag, Heidelberg, Germany, 400-409, LNCS 9337, ISBN 978-3-319-24254-5.  <br>
+Johnson, C.W., (2015a), Barriers to the Use of Intrusion Detection Systems in Safety-Critical Applications.  In F. Koorneef and C. van Gulijk (eds.), SAFECOMP 2015, Springer Verlag, Heidelberg, Germany, 375-384, LNCS 9337, ISBN 978-3-319-24254-5.   <br>
+Piètre-Cambacédès, L. and Bouissou, M., (2010), Modelling Safety and Security Interdependencies with BDMP (Boolean logic Driven Markov Processes). IEEE International Conference on Systems Man and Cybernetics (SMC), 10-13 Oct. 2010, 2852 – 2861.  <br>
+Spitzner, L. (2002), Honeypots tracking hackers. Addison-Wesley. pp. 68–70. ISBN 0-32110895-7.  <br>
+U.S. Department of Justice (2004), Forensic Examination of Digital Evidence: A Guide for Law Enforcement.   <br>
+U.S. Department of Justice (2008), Office of Justice Programs, Electronic Crime Scene Investigation: A Guide for First Responders, Second Edition, Washington DC, 2008. http://www.nij.gov/publications/ecrime-guide-219941/  <br>
 U.S. National Institute of Standards and Technology (NIST, 2012), Computer Security Incident Handling Guide (Draft), Special Publication 800-61 Revision 2 (Draft), Gaithersburg, Maryland.
