@@ -18,53 +18,37 @@ B. E Student, Department of Computer Engineering, Dr D Y Patil School of Enginee
 这个数据集包含了超过500万的训练样本和200万的测试样本。如此大规模的数据集阻碍了分类器的构建和测试过程，或者使分类器由于内存不足而导致的系统故障无法执行。此外，大型数据集通常包含有噪声、冗余或无信息的特性，这些特性对知识发现和数据建模提出了严峻的挑战。
 ## 二、文献调查
 
-1] F. Amiri, M. RezaeiYousefi, C. Lucas, A. Shakery, N. Yazdani, Mutual information-based feature selection for intrusion detection systems, Journal of Network and Computer Applications 34 (4) (2011) 1184–1199. 
-
-参考点：
-
+1] F. Amiri, M. RezaeiYousefi, C. Lucas, A. Shakery, N. Yazdani, Mutual information-based feature selection for intrusion detection systems, Journal of Network and Computer Applications 34 (4) (2011) 1184–1199. <br>
+参考点：<br>
 本文提出了一种利用互信息法来度量特征间关系的正向特征选择算法。然后使用最优特性集训练LS-SVM分类器并构建IDS。特征选择是一种消除不相关和冗余特征并选择最佳特征子集的技术，可以更好地表征属于不同类别的模式。特征选择的方法通常分为过滤器和包装器方法。
 
-2] A. Abraham，R. Jain，J. Thomas，S. Y. Han，D-scids：Distributed soft computing intrusion detection system，Journal of Network and Computer Applications 30（1）（2007）81-98。
-
-参考点:
-
+2] A. Abraham，R. Jain，J. Thomas，S. Y. Han，D-scids：Distributed soft computing intrusion detection system，Journal of Network and Computer Applications 30（1）（2007）81-98。<br>
+参考点:<br>
 过滤算法利用独立的度量（例如信息度量，距离度量或一致性度量）作为估计一组特征关系的标准，而包装器算法利用特定的学习算法来评估特性的价值。与筛选方法相比，包装器方法在处理高维数据或大规模数据时通常要花费更多的计算成本。在本研究中，我们主要关注IDS的筛选方法。由于数据维数的不断增长，作为预处理步骤的特征选择已经成为构建入侵检测系统的重要组成部分。 
 
-3] S. Mukkamala, A. H. Sung, Significant feature selection using computational intelligent techniques for intrusion detection, in: Advanced Methods for Knowledge Discovery from Complex Data, Springer, 2005, pp. 285–306.
-
-参考点：
-
+3] S. Mukkamala, A. H. Sung, Significant feature selection using computational intelligent techniques for intrusion detection, in: Advanced Methods for Knowledge Discovery from Complex Data, Springer, 2005, pp. 285–306.<br>
+参考点：<br>
 本文提出了一种新的特征选择算法，将KDD Cup 99数据集的特征空间从41维减少到6维，并使用基于支持向量机的入侵检测系统对6个特征进行评估。结果显示，使用所选功能时，分类精度提高1％。
 
 
-4] S. Chebrolu, A. Abraham, J. P. Thomas, Feature deduction and ensemble design of intrusion detection systems, Computers & Security 24 (4) (2005) 295–307. 
-
-参考点:
-
+4] S. Chebrolu, A. Abraham, J. P. Thomas, Feature deduction and ensemble design of intrusion detection systems, Computers & Security 24 (4) (2005) 295–307. <br>
+参考点:<br>
 本文调查了使用Markov覆盖模型和决策树分析进行特征选择的性能，该性能显示了其将KDD Cup 99中的特征数量从41个减少到12个特征的能力。
 
-5] Y. Chen, A. Abraham, B. Yang, Feature selection and classification flexible neural tree, Neurocomputing 70 (1) (2006) 305–313. [7] S.-J. Horng, M.-Y.Su, Y.-H.Chen, T.-W.Kao, R.-J.Chen, J.-L. Lai, C. D. Perkasa, A novel intrusion detection system based on hierarchical clustering and support vector machines, Expert systems with Applications 38 (1) (2011) 306– 313. 
-
-参考点:
-
+5] Y. Chen, A. Abraham, B. Yang, Feature selection and classification flexible neural tree, Neurocomputing 70 (1) (2006) 305–313. [7] S.-J. Horng, M.-Y.Su, Y.-H.Chen, T.-W.Kao, R.-J.Chen, J.-L. Lai, C. D. Perkasa, A novel intrusion detection system based on hierarchical clustering and support vector machines, Expert systems with Applications 38 (1) (2011) 306– 313. <br>
+参考点:<br>
 本文提出了一种基于柔性神经树(FNT)的检测方法。该模型应用了预处理特征选择阶段来提高检测性能。使用KDD Cup 99，FNT型号只有4个特征，检测精度达到了99.19％。
 
-6] S.-J. Horng, M.-Y.Su, Y.-H.Chen, T.-W.Kao, R.-J.Chen, J.-L. Lai, C. D. Perkasa, A novel intrusion detection system based on hierarchical clustering and support vector machines, Expert systems with Applications 38 (1) (2011) 306–313.
-
-参考点：
-
+6] S.-J. Horng, M.-Y.Su, Y.-H.Chen, T.-W.Kao, R.-J.Chen, J.-L. Lai, C. D. Perkasa, A novel intrusion detection system based on hierarchical clustering and support vector machines, Expert systems with Applications 38 (1) (2011) 306–313.<br>
+参考点：<br>
 本文提出了一种基于SVM的IDS，它结合了层次聚类和SVM。采用分层聚类算法为分类器提供更少、更高质量的训练数据，以减少平均训练和测试时间，提高分类器的分类性能。在修正的标签KDD Cup 99数据集上进行了实验，其中包括一些新的攻击，基于svm的IDS的总体精度为95.75%，假正率为0.7%。所有上述检测技术都是在KDD Cup 99数据集上进行评估的。
  
-7] R. Chitrakar, C. Huang, Selection of candidate support vectors in incremental svm for network intrusion detection, Computers & Security 45 (2014) 231–241.  
-
-参考点：
-
+7] R. Chitrakar, C. Huang, Selection of candidate support vectors in incremental svm for network intrusion detection, Computers & Security 45 (2014) 231–241.  <br>
+参考点：<br>
 本文提出了基于候选支持向量的增量式SVM算法（简称CSV-ISVM）。该算法应用于网络入侵检测。他们在Kyoto 2006+ [11]数据集上评估了基于CSV-ISVM的IDS。实验结果表明，它们的IDS在检测率和误报率方面产生了令人满意的结果。
  
-8] J. Song, H. Takakura, Y. Okabe, M. Eto, D. Inoue, K. Nakao, Statistical analysis of honeypot data and building of kyoto 2006+ dataset for nids evaluation, in: Proceedings of the First Workshop on Building Analysis Datasets and Gathering Experience Returns for Security, ACM, 2011, pp. 29–36.
-
-参考点:
-
+8] J. Song, H. Takakura, Y. Okabe, M. Eto, D. Inoue, K. Nakao, Statistical analysis of honeypot data and building of kyoto 2006+ dataset for nids evaluation, in: Proceedings of the First Workshop on Building Analysis Datasets and Gathering Experience Returns for Security, ACM, 2011, pp. 29–36.<br>
+参考点:<br>
 在[8]中提出的降维方法是找出建立一个朴素贝叶斯分类器进行入侵检测的最重要的特征。在NSL-KDD数据集上进行的实验产生了令人鼓舞的结果。
 
 ## 三、建议的系统/系统概述
