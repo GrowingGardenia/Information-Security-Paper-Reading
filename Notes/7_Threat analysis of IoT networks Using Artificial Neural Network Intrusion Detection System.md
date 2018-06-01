@@ -34,7 +34,7 @@ IoT威胁可以分为四种类型[5]：1）拒绝服务（DoS） - 这种威胁�
 一个IDS被战略性地放置在一个网络上，以检测威胁和监视数据包。IDS的功能包括提供有关威胁的信息，在检测到威胁时采取纠正步骤，并记录网络中所有事件的记录[12].
 ### A.	入侵检测分类
 表I. HIDS和NIDS性能比较[13]
-
+![7-1](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/7-1.png) 
 入侵检测系统可以分为两类[3]：
 •基于主机的入侵检测系统（HIDS） - 这是基于软件的产品，安装在主机上，用于分析和监控系统应用文件和操作系统上的所有流量活动。 
 •基于网络的IDS（NIDS） - 可在整个网络上找到这些IDS以通过网络捕获和分析数据包流。表I中显示了基于主机的ID和基于网络的IDS的性能比较。
@@ -64,24 +64,35 @@ IoT威胁可以分为四种类型[5]：1）拒绝服务（DoS） - 这种威胁�
 •无监督的神经网络学习过程:在这个学习过程中，神经网络有一个输入d，这是一组无标记的数据，你要在数据中找到模式。SOM是一种使用无监督学习过程训练的神经网络，用来生成低维的、离散化的训练样本输入空间的表示。
  
 在这项工作中，使用了如图1所示的具有三层前馈神经网络的MLP架构。该网络在每个隐藏层和输出层的神经元中都具有单极sigmoid传递函数。使用具有均方误差函数的随机学习算法。在图1中使用了标记为x1 …x 6的节点来表示神经网络的输入单位，其中标记为“+1”的圆被称为偏差单位。 ANN模型有六个输入单元（layer1），三个隐藏单元（layer2）和一个输出单元（layer13），其中l表示层。该网络采用前馈学习算法和后向学习算法进行训练。
+
+ ![7-2](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/7-2.png) 
  
 图1三层人工神经网络
  
 ### A.	前馈学习算法
- 
+  ![7-4](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/7-4.png)
+  
 设sl表示不包括偏差单位的单位数。因此，我们做网络参数：（w,b）=(w1,b1,w2,b2),其中w ij表示与层l中单元j和层l+1中单元i之间的连接有关的参数。bli是与单元i在第1+ l层有关的偏差，因此从上面的模型中可以看出
  
+  ![7-5](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/7-5.png) 
+  
 令ai1表示单元在第1层的输出，对于i= 1，我们令aii = x1（表示第i个输入，ANNs模型将定义一个假设。
 ### B.	后向学习算法
 这个学习过程经历了四个步骤，如下所示。 
 •前馈学习算法计算网络中所有层的激活。 
 •将l3中的out设置为计算输出中的误差项：
- 
+  
+  ![7-6](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/7-6.png) 
+   
+  ![7-7](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/7-7.png) 
+  
 
  
 训练人工神经网络涉及采取梯度下降的重复步骤来降低成本函数J(w,b)。
 ## 四、实验情景
- 
+  
+  ![7-8](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/7-8.png) 
+  
 图2实验体系结构
  
 物联网网络由5个节点传感器组成。其中四个节点充当客户端，一个充当服务器中继节点以用于数据分析目的。通过网络窃听来捕获流量，避免修改实时流量。服务器节点确认传感器节点发送的数据，并基于接收到的数据回复数据。这允许传感器节点调整其行为并对发生的事件做出反应，如图2（左）所示。
@@ -94,36 +105,41 @@ IoT威胁可以分为四种类型[5]：1）拒绝服务（DoS） - 这种威胁�
 
 
 ## 五、结果与讨论
-本节提供了对第四部分描述的人工神经网络入侵检测性能的评估。 网络接受了2313个样本的训练，经过496个样本和496个测试样本的验证。 表2显示了用于分类的样本数量。 表2  用于分类的样本数量
- 
+本节提供了对第四部分描述的人工神经网络入侵检测性能的评估。 网络接受了2313个样本的训练，经过496个样本和496个测试样本的验证。 表2显示了用于分类的样本数量。 
+表2  用于分类的样本数量
+  
+  ![7-9](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/7-9.png) 
+  
  
 图3神经网络训练混淆矩阵。
- 
+  
+  ![7-10](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/7-10.png) 
+  
 图3显示了训练集、测试集、验证集和右下角的所有混淆矩阵（总体性能）的神经网络混淆矩阵图。 网络输出正确的响应值分为两类：真正（TP）和假正（FP）。 TP输出提供了正确分类的攻击措施，如绿色框中所示。 FP是正确分类的正常事件的度量，如红色框中所示。 神经网络模型在分类中显示99.4％的总体准确度。该模型表明，实现的ANN算法能够成功地检测到DDoS/DoS攻击对合法的IoT网络流量的攻击。此外，它还可以通过在攻击的早期警告响应团队，避免主要的网络中断，从而帮助提高网络的稳定性。
 
 ## 六、结论和未来工作
 在本文中，我们提出了一种基于神经网络的物联网入侵检测方法来识别DDoS / DOS攻击。 该检测基于对正常和威胁模式进行分类。 人工神经网络模型验证了模拟物联网网络的准确性超过99％。 它能够成功地识别不同类型的攻击，并在真实和假阳性率方面表现出良好的表现。 对于未来的发展，应引入更多的攻击来测试我们的方法抵御攻击的可靠性并提高框架的准确性。 此外，我们将研究其他更深层次的神经网络，例如递归和卷积神经网络方法。
 
 ## REFERENCES
-[1] “Internet of Things (IoT).” [Online]. Available:http://www.cisco.com/c/en/us/solutions/internet-ofthings/overview.html. [Accessed: 12-Jan-2016].
-[2] D. Evans, “The Internet of Things - How the Next Evolution of the Internet is Changing Everything,” CISCO white Pap. ,no. April, pp. 1–11, 2011.
-[3] SANS institute, “InfoSec Reading Room tu , Application of Neural Networks to Intrusion Detection,” 2001.<rt>
-[4] J. Shun and H. a. Malki, “Network Intrusion Detection System Using Neural Networks,” 2008 Fourth Int. Conf. Nat. Comput., vol. 5, pp. 242–246, 2008.
-[5] “Internet of Things: How Much are We Exposed to Cyber Threats? - InfoSec Resources.” [Online]. Available: http://resources.infosecinstitute.com/internet-things-muchexposed-cyber-threats/. [Accessed: 10-Dec-2015]. 
-[6] X. Bellekens, A. Seeam, K. Nieradzinska, C. Tachtatzis, A. Cleary, R. Atkinson, and I. Andonovic, “Cyber-Physical- Security Model for Safety-Critical IoT Infrastructures.” Wireless World Research Forum Meeting 35 (WWRF35), Copenhagen, Danemark, 2015.
-[7] S. Institute, “SANS InstituteInfoSec Reading Room tuevolution , The history and Evolution of Intrusion Detection,” 2001.
-[8] N. T. T. Van and T. N. Thinh, “Accelerating Anomaly- Based IDS Using Neural Network on GPU,” in 2015 International Conference on Advanced Computing and Applications (ACOMP), 2015, pp. 67–74.
-[9] C. Han, Y. Lv, D. Yang, and Y. Hao, “An intrusion detection system based on neural network,” in 2011 International Conference on Mechatronic Science, Electric Engineering and Computer (MEC), 2011, pp. 2018–2021.
-[10] Z. Li, W. Sun, and L. Wang, “A neural network based distributed intrusion detection system on cloud platform,” in 2012 IEEE 2nd International Conference on Cloud Computing and Intelligence Systems, 2012, vol. 01, pp. 75– 79.
-[11] V. Jaiganesh, P. Sumathi, and S. Mangayarkarasi, “An analysis of intrusion detection system using back propagation neural network,” in 2013 International Conference on Information Communication and Embedded Systems (ICICES), 2013, pp. 232–236.
-[12] “What it is Network intrusion detection system? | COMBOFIX.” [Online]. Available: http://www.combofix.org/what-it-is-network-intrusiondetection- system.php. [Accessed: 10-Dec-2015].
-[13] H. Kozushko, “Intrusion detection: Host-based and network based intrusion detection systems,” Sept., vol. 11, 2003.
+[1] “Internet of Things (IoT).” [Online]. Available:http://www.cisco.com/c/en/us/solutions/internet-ofthings/overview.html. [Accessed: 12-Jan-2016].<br>
+[2] D. Evans, “The Internet of Things - How the Next Evolution of the Internet is Changing Everything,” CISCO white Pap. ,no. April, pp. 1–11, 2011.<br>
+[3] SANS institute, “InfoSec Reading Room tu , Application of Neural Networks to Intrusion Detection,” 2001.<br>
+[4] J. Shun and H. a. Malki, “Network Intrusion Detection System Using Neural Networks,” 2008 Fourth Int. Conf. Nat. Comput., vol. 5, pp. 242–246, 2008.<br>
+[5] “Internet of Things: How Much are We Exposed to Cyber Threats? - InfoSec Resources.” [Online]. Available: http://resources.infosecinstitute.com/internet-things-muchexposed-cyber-threats/. [Accessed: 10-Dec-2015]. <br>
+[6] X. Bellekens, A. Seeam, K. Nieradzinska, C. Tachtatzis, A. Cleary, R. Atkinson, and I. Andonovic, “Cyber-Physical- Security Model for Safety-Critical IoT Infrastructures.” Wireless World Research Forum Meeting 35 (WWRF35), Copenhagen, Danemark, 2015.<br>
+[7] S. Institute, “SANS InstituteInfoSec Reading Room tuevolution , The history and Evolution of Intrusion Detection,” 2001.<br>
+[8] N. T. T. Van and T. N. Thinh, “Accelerating Anomaly- Based IDS Using Neural Network on GPU,” in 2015 International Conference on Advanced Computing and Applications (ACOMP), 2015, pp. 67–74.<br>
+[9] C. Han, Y. Lv, D. Yang, and Y. Hao, “An intrusion detection system based on neural network,” in 2011 International Conference on Mechatronic Science, Electric Engineering and Computer (MEC), 2011, pp. 2018–2021.<br>
+[10] Z. Li, W. Sun, and L. Wang, “A neural network based distributed intrusion detection system on cloud platform,” in 2012 IEEE 2nd International Conference on Cloud Computing and Intelligence Systems, 2012, vol. 01, pp. 75– 79.<br>
+[11] V. Jaiganesh, P. Sumathi, and S. Mangayarkarasi, “An analysis of intrusion detection system using back propagation neural network,” in 2013 International Conference on Information Communication and Embedded Systems (ICICES), 2013, pp. 232–236.<br>
+[12] “What it is Network intrusion detection system? | COMBOFIX.” [Online]. Available: http://www.combofix.org/what-it-is-network-intrusiondetection- system.php. [Accessed: 10-Dec-2015].<br>
+[13] H. Kozushko, “Intrusion detection: Host-based and network based intrusion detection systems,” Sept., vol. 11, 2003.<br>
 [14] J. Mena, Investigative data mining for security and criminal detection. Amsterdam ; Boston, MA : Butterworth- Heinemann, 2003.
-[15] T. Verwoerd and R. Hunt, Intrusion detection techniques and approaches, vol. 25, no. 15. 2002.
-[16] X. J. A. Bellekens, C. Tachtatzis, R. C. Atkinson, C. Renfrew, and T. Kirkham, “A Highly-Efficient Memory- Compression Scheme for GPU-Accelerated Intrusion Detection Systems,” Proc. 7th Int. Conf. Secur. Inf. Networks - SIN ’14, pp. 302–309, 2014.
-[17] M. A. Alsheikh, S. Lin, D. Niyato, and H.-P. Tan, “Machine Learning in Wireless Sensor Networks: Algorithms, Strategies, and Applications,” IEEE Commun. Surv. Tutorials, vol. 16, no. 4, pp. 1996–2018, 2014.
-[18] K. A. Jalill, M. H. Kamarudin, and U. T. Mara, “Comparison of Machine Learning Algorithms Performance in Detecting Network Intrusion,” pp. 221–226, 2010.
-[19] F. Gharibian and A. A. Ghorbani, “Comparative Study of Supervised Machine Learning Techniques for Intrusion Detection,” in Fifth Annual Conference on Communication Networks and Services Research (CNSR ’07), 2007, pp. 350–358.
-[20] K. Murphy, “Machine learning: a probabilistic perspective,” Chance encounters: Probability in …, 2012. [Online]. Available: http://link.springer.com/chapter/10.1007/978-94- 011-3532-0_2. [Accessed: 06-Jan-2015].
-[21] M. Moradi and M. Zulkernine, “A neural network based system for intrusion detection and classification of attacks,” Proc. 2004 IEEE Int. Conf. Adv. Intell. Syst. Appl., 2004.
-[22] a Bivens and C. Palagiri, “Network-based intrusion detection using neural networks,” … Neural Networks, vol. 12, pp. 579–584, 2002.
+[15] T. Verwoerd and R. Hunt, Intrusion detection techniques and approaches, vol. 25, no. 15. 2002.<br>
+[16] X. J. A. Bellekens, C. Tachtatzis, R. C. Atkinson, C. Renfrew, and T. Kirkham, “A Highly-Efficient Memory- Compression Scheme for GPU-Accelerated Intrusion Detection Systems,” Proc. 7th Int. Conf. Secur. Inf. Networks - SIN ’14, pp. 302–309, 2014.<br>
+[17] M. A. Alsheikh, S. Lin, D. Niyato, and H.-P. Tan, “Machine Learning in Wireless Sensor Networks: Algorithms, Strategies, and Applications,” IEEE Commun. Surv. Tutorials, vol. 16, no. 4, pp. 1996–2018, 2014.<br>
+[18] K. A. Jalill, M. H. Kamarudin, and U. T. Mara, “Comparison of Machine Learning Algorithms Performance in Detecting Network Intrusion,” pp. 221–226, 2010.<br>
+[19] F. Gharibian and A. A. Ghorbani, “Comparative Study of Supervised Machine Learning Techniques for Intrusion Detection,” in Fifth Annual Conference on Communication Networks and Services Research (CNSR ’07), 2007, pp. 350–358.<br>
+[20] K. Murphy, “Machine learning: a probabilistic perspective,” Chance encounters: Probability in …, 2012. [Online]. Available: http://link.springer.com/chapter/10.1007/978-94- 011-3532-0_2. [Accessed: 06-Jan-2015].<br>
+[21] M. Moradi and M. Zulkernine, “A neural network based system for intrusion detection and classification of attacks,” Proc. 2004 IEEE Int. Conf. Adv. Intell. Syst. Appl., 2004.<br>
+[22] a Bivens and C. Palagiri, “Network-based intrusion detection using neural networks,” … Neural Networks, vol. 12, pp. 579–584, 2002.<br>
