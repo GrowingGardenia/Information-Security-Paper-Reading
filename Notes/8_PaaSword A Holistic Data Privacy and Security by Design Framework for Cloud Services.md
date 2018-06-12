@@ -1,16 +1,14 @@
 # PaaSword: A Holistic Data Privacy and Security by Design Framework for Cloud Services
 # PasSword：云服务设计框架提供的整体数据隐私和安全性
 
-Yiannis Verginadis1, Antonis Michalas2, Panagiotis Gouvas3, Gunther Schiefer4, Gerald H¨ubsch5,
-Iraklis Paraskakis6
-1Institute of Communications and Computer Systems, National Technical University of Athens, Athens, Greece
-2Security Lab, Swedish Institute of Computer Science, Stockholm, Sweden
-3Ubitech Ltd., Athens, Greece
-4Karlsruhe Institute of Technology, Karlsruhe, Germany
-5CAS Software AG, Karlsruhe, Germany
-6South East European Research Centre, Thessaloniki, Greece
-jverg@mail.ntua.gr, antonis@sics.se, pgouvas@ubitech.eu, gunther.schiefer@kit.edu, gerald.huebsch@cas.de,
-iparaskakis@seerc.org
+Yiannis Verginadis1, Antonis Michalas2, Panagiotis Gouvas3, Gunther Schiefer4, Gerald H¨ubsch5,Iraklis Paraskakis6 <br>
+1 Institute of Communications and Computer Systems, National Technical University of Athens, Athens, Greece <br>
+2 Security Lab, Swedish Institute of Computer Science, Stockholm, Sweden <br>
+3 Ubitech Ltd., Athens, Greece <br>
+4 Karlsruhe Institute of Technology, Karlsruhe, Germany <br>
+5 CAS Software AG, Karlsruhe, Germany <br>
+6 South East European Research Centre, Thessaloniki, Greece <br>
+jverg@mail.ntua.gr, antonis@sics.se, pgouvas@ubitech.eu, gunther.schiefer@kit.edu, gerald.huebsch@cas.de,iparaskakis@seerc.org <br>
 
 ## 关键词：
 数据隐私，设计安全，情境感知安全，对称可搜索加密，云计算
@@ -18,9 +16,9 @@ iparaskakis@seerc.org
 采用云计算的组织进行有价值的转型，无疑伴随着一系列需要考虑的安全威胁。在本文中，我们概述了迁移到云环境时出现的重大安全挑战，并提出PaaSword--一种新颖的整体数据隐私和安全性设计框架，旨在缓解这些挑战。 设想的框架旨在最大化和加强个人，专业和企业用户对云服务的信任。 具体而言，PaaSword涉及态势感知安全模型，必要的策略实施和治理机制以及物理分发，加密和查询中间件，旨在促进实施安全和透明的基于云的应用程序。
 
 ## 1 引言
-    直到最近，大规模计算还是专门针对拥有丰富内部专业知识的大型组织。云计算已经改变了这一点，即任何拥有基本技术技能的用户都可以以低成本获得大量计算资源。在技术采用生命周期中，云计算现在已经逐渐成为大规模使用的早期阶段，我们通常会看到指数级的部署。在过去几年中，许多用户开始依赖云服务而没有意识到这一点。主要的网络邮件提供商利用云技术;平板电脑和智能手机通常会默认自动将用户照片上传到云存储和社交网络;最后，一些著名的CRM厂商使用云提供他们的服务。换句话说，云计算的采用已经从专注的兴趣转向广泛传播的大量实验，并且正在迅速普及近乎无处不在的应用前景。
+   直到最近，大规模计算还是专门针对拥有丰富内部专业知识的大型组织。云计算已经改变了这一点，即任何拥有基本技术技能的用户都可以以低成本获得大量计算资源。在技术采用生命周期中，云计算现在已经逐渐成为大规模使用的早期阶段，我们通常会看到指数级的部署。在过去几年中，许多用户开始依赖云服务而没有意识到这一点。主要的网络邮件提供商利用云技术;平板电脑和智能手机通常会默认自动将用户照片上传到云存储和社交网络;最后，一些著名的CRM厂商使用云提供他们的服务。换句话说，云计算的采用已经从专注的兴趣转向广泛传播的大量实验，并且正在迅速普及近乎无处不在的应用前景。
 
-    企业越来越认识到云计算的经济和操作效益。将IT资源虚拟化并集中到云中，可以使组织实现显著的成本节约，并加快新应用程序的部署，同时以前所未有的速度改变企业和政府。然而，如果不解决云计算带来的新的数据安全挑战，这些宝贵的业务优势就无法实现。
+   企业越来越认识到云计算的经济和操作效益。将IT资源虚拟化并集中到云中，可以使组织实现显著的成本节约，并加快新应用程序的部署，同时以前所未有的速度改变企业和政府。然而，如果不解决云计算带来的新的数据安全挑战，这些宝贵的业务优势就无法实现。
     
 尽管云计算带来了好处，但出于安全考虑，许多公司仍保持谨慎。应用程序和存储卷通常位于潜在的恶意虚拟环境的旁边，使敏感信息面临被窃取、未经授权的暴露或恶意操纵的风险。政府对数据隐私和位置的监管带来了另一个重大的法律和财务后果，如果违反数据保密规定，或者云提供商将监管数据移到国境，则会引发额外的法律和财务后果。这份文件的贡献有两点。首先，我们给出了在迁移到云环境时必须考虑的核心安全需求和挑战列表。这些安全需求基于我们将现有应用程序迁移到私有基础设施即服务(IaaS)云(Michalas et al.， 2014)的经验。我们通过讨论云环境的重要攻击向量特征来扩展本指南，这将为构建云服务时提供更严格的安全性铺平道路。其次，为了应对关键的云安全挑战，我们提出了PaaSword，这是一个设想中的框架，将最大化并增强个人、专业和企业用户对云服务和应用程序的信任。PaaSword通过提供存储保护机制来实现这一点，该机制在不影响数据访问功能的同时，提高了用户数据在云中的保密性和完整性保护。
 
@@ -58,7 +56,7 @@ ii）数据对象注释的有效性检查（例如拒绝开发人员做出的任
 iii）数据对象注释之间的依赖关系跟踪。
 该中间件的另一个关键方面是注释解释机制。这种机制将用于在应用程序运行时期间基于数据对象注释的解释动态生成访问控制策略。这种机制将实现访问决策与使用点（即XACML规范的策略执行点（PEP））之间的基本解耦。这个解释是基于一个符合XACML的上下文模型，它可以通过安全即服务层来增强任何PaaS提供商提供的功能。为此，我们将使用OASIS XACML，因为它支持并鼓励将访问决策与使用点分开。
 
-[!图8_1]
+![8-1](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/edit/master/picture/8_1.png)
 
 图1：XACML组件的高级视图
 
@@ -89,6 +87,8 @@ PaaSword的基本原则是存储在不受信任的服务器上的敏感数据必
 为了加强远程服务访问的安全性，研究人员引入了位置感知访问控制（LAAC）的概念，该系统允许系统根据用户的物理位置授予或拒绝访问用户。 LAAC模型通常扩展了三个基本访问控制模型DAC，MAC和RBAC（Decker，2011）。尽管LAAC协议已被广泛研究（Cleeff et al。，2010），但明显缺乏确定用户访问权限的方案，这些方案不仅基于用户的物理位置和凭证，而且还包含最新的相关上下文信息。该报告是第一个引入情境感知访问控制（CAAC）的概念，由智能家庭的应用程序驱动。更确切地说，作者介绍了一组基于对象或主题位置的服务。所提出的模型的主要缺点是它不支持动态生成的上下文，而它却失败了，以至于无法支持多位置的多重性要求。其他现有的CAAC模型主要基于RBAC（Kayes et al。，2013），并且通常针对特定领域（Costabello等，2012）。然而，这些模型并没有被设计为提供细粒度的数据访问控制，例如通过提供为数据库的不同行指定不同访问规则的能力。关于政策管理，最近对当代开放源码注册管理机构和知识库系统方法的调查显示（Kourtesis和Paraskakis，2012），主要缺点是缺乏恰当的问题分离。政策定义和政策执行纠缠在一个单一软件组件 - 策略检查器的实施中。最后的行为准则通常以一种命令式的方式进行编码，这种方式是检查潜在的政策违规行为的代码。这有一些负面影响，其中包括可携带性和政策关系缺乏明确表示。
 
 数据分发和加密算法也是可信云服务和应用的重要方面。在（Gentry，2009）中，C.Gentry提出了第一个完全同态加密方案，它使语义上安全扩展到云中。云提供商盲目运行加密数据并产生正确的加密结果。尽管如此，它的实用性仍然存在问题，因为最新的实现比下载所有加密数据的速度还要慢，在本地解密，处理和加密，最后再次上传。在另一个有趣的方法（Popa et al。，2011）中，使用了洋葱的概念。洋葱由单一的过氧化物质处理，充当用户和存储后端之间的适配器。关系表中的每个属性都是不对称加密的。如果发出某属性的某种查询，则将洋葱层剥离，导致另一种不太安全的洋葱。 CryptDB使用一种新颖的保留加密顺序的方案，除了顺序之外不泄漏任何有关数据的信息，因此可以安全地对加密数据进行排序。 CryptDB的主要缺点是缺乏客户端的安全保证。更确切地说，唯一的保证是不可信的服务器只会学习那些必要的信息。在最坏的情况下，这可能会导致每个属性都被简化为纯文本。此外，剥离层不能颠倒，因此单个查询足以永久降低安全性。
+
+![8-2](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/edit/master/picture/8_2.png)
 
 图2：PaaSword框架概念架构
 
