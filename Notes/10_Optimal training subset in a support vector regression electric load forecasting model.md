@@ -21,43 +21,44 @@ b兰州大学数学与统计学院，甘肃兰州730000
 ### 2.1 非线性动力学和数据预处理
 
 预测的目标是根据自己的发展规则推断物体的未来。本研究采用非线性预测算法来预测电力负荷动态。该算法将单变量时间序列转化为多维相空间，表示不同时刻的系统状态。根据Takens的嵌入定理[18]，一个标量时间序列（例如电负载序列）yt，其中t = 1,2，...。 。 T可以按如下方式重建
+
 ![10-1](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-1.png) 
 
-其中j = 1，2，... T-（m-1）τ，m是嵌入维数，τ是时间延迟。基于维度m中的相空间重构，我们可以以反射的形式构造底层动力学F：Rm→Rm
+其中j = 1，2，... T-（m-1）τ，m是嵌入维数，τ是时间延迟。基于维度m中的相空间重构，我们可以以反射的形式构造底层动力学F：Rm→Rm <br>
  ![10-2](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-2.png) 
  
-其中Yj和Yj + 1分别是描述系统在时间j（当前状态）和j + 1（未来状态）的状态的维度为m的向量。然后预测反射F：Rm→Rm可以表示为：
+其中Yj和Yj + 1分别是描述系统在时间j（当前状态）和j + 1（未来状态）的状态的维度为m的向量。然后预测反射F：Rm→Rm可以表示为： <br>
  ![10-3](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-3.png) 
  
 这里，它是非线性的，需要找到一个特定的函数表达式，这可以通过利用ε-SVR模拟非线性反射的良好能力来获得。
-在用训练数据训练ε-SVR之前，必须对数据进行归一化处理，以确定ε-SVR的参数值[19]。为此目的通常使用各种标准化方法。刘等人[20]比较了基于用于目标识别的RPROP算法的6种不同的归一化方法，他们得出结论：线性归一化方法和组分白化方法给出了几乎最好的结果，并且概念简单。为了简单起见，我们在本研究中将数据线性地映射到指定范围[ymin，ymax]。假设y’max和y’min是变换变量范围的最大值和最小值; ymax和ymin是训练数据的最大值和最小值。所以变量y的每个值都被转换如下：
+在用训练数据训练ε-SVR之前，必须对数据进行归一化处理，以确定ε-SVR的参数值[19]。为此目的通常使用各种标准化方法。刘等人[20]比较了基于用于目标识别的RPROP算法的6种不同的归一化方法，他们得出结论：线性归一化方法和组分白化方法给出了几乎最好的结果，并且概念简单。为了简单起见，我们在本研究中将数据线性地映射到指定范围[ymin，ymax]。假设y’max和y’min是变换变量范围的最大值和最小值; ymax和ymin是训练数据的最大值和最小值。所以变量y的每个值都被转换如下： <br>
  ![10-4](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-4.png) 
  
-由于（ymax，y'max）和（ymin，y'min）是上式的两点，所以我们可以得到常数A和B，如下所示：
+由于（ymax，y'max）和（ymin，y'min）是上式的两点，所以我们可以得到常数A和B，如下所示： <br>
  ![10-5](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-5.png) 
  
-在使用所提出的方法之后，数据可以通过以下公式恢复到未标准化的数据。
+在使用所提出的方法之后，数据可以通过以下公式恢复到未标准化的数据。 <br>
  ![10-6](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-6.png) 
  
 ### 2.2 支持向量回归
 支持向量回归（SVR）[21]是一种利用核函数的回归技术，它是六十年代在俄罗斯开发的广义肖像算法的非线性扩展。 本小节简要介绍SVR，它执行时间序列预测的非线性映射; 并且我们会向读者介绍优秀的调查，以便对其进行更全面的报道[22-26]。
-假设我们有训练数据（x1，y1），… ，（xn，yn）⊂W×R，其中W表示输入图形xi的空间（例如W = Rn），yi是xi的相关输出值。 在ε-SVR [27]中，我们的目标是产生一个函数F（x），对于所有训练数据，它的实际获得的目标yi最多有ε偏差，同时尽可能“平坦”。 也就是说，只要它们小于ε，我们就不会在意误差，但不会容忍比这更大的偏差。 因此，我们得到了ε-SVR中[27]中所述的公式。
+假设我们有训练数据（x1，y1），… ，（xn，yn）⊂W×R，其中W表示输入图形xi的空间（例如W = Rn），yi是xi的相关输出值。 在ε-SVR [27]中，我们的目标是产生一个函数F（x），对于所有训练数据，它的实际获得的目标yi最多有ε偏差，同时尽可能“平坦”。 也就是说，只要它们小于ε，我们就不会在意误差，但不会容忍比这更大的偏差。 因此，我们得到了ε-SVR中[27]中所述的公式。 <br>
  ![10-7](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-7.png) 
  
-其中n表示样本的数量，常数C> 0决定了F（x）的平坦度与容许偏差大于ε的量之间的折衷，ξi表示训练误差的上限，而ξ*i是受到ε不敏感的较低训练误差| yi - （<ω，xi>+ b）| ≤ε。 这个ε不敏感损失函数|εε| 可以用下面的等式来描述。
+其中n表示样本的数量，常数C> 0决定了F（x）的平坦度与容许偏差大于ε的量之间的折衷，ξi表示训练误差的上限，而ξ*i是受到ε不敏感的较低训练误差| yi - （<ω，xi>+ b）| ≤ε。 这个ε不敏感损失函数|εε| 可以用下面的等式来描述。 <br>
  ![10-8](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-8.png) 
  
-ε-SVR不是最小化观察到的训练误差，而是试图最小化泛化误差界限以实现广义性能，这使得ε-SVR对异常值非常健壮。换句话说，ε-SVR将F（x）拟合到数据上，使得：（i）通过使αi和αi最小化来使广义误差界最小化，（ii）（1/2）ωTω被最小化为促进F（x）的平坦性，或避免过于复杂的拟合函数。最后，通过引入拉格朗日乘子，核心技巧和采用最优性约束，我们得到以下显式形式
+ε-SVR不是最小化观察到的训练误差，而是试图最小化泛化误差界限以实现广义性能，这使得ε-SVR对异常值非常健壮。换句话说，ε-SVR将F（x）拟合到数据上，使得：（i）通过使αi和αi最小化来使广义误差界最小化，（ii）（1/2）ωTω被最小化为促进F（x）的平坦性，或避免过于复杂的拟合函数。最后，通过引入拉格朗日乘子，核心技巧和采用最优性约束，我们得到以下显式形式 <br>
  ![10-9](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-9.png) 
  
 #### 2.2.1 拉格朗日乘子
-在等式（11）式中，αi和αi*是所谓的拉格朗日乘子，是通过最大化方程（2）的对偶函数得到的。关键思想是从目标函数Eq构造一个拉格朗日函数和相应的约束通过引入一组双变量。方程中的最大双重函数（8）具有以下形式：
+在等式（11）式中，αi和αi*是所谓的拉格朗日乘子，是通过最大化方程（2）的对偶函数得到的。关键思想是从目标函数Eq构造一个拉格朗日函数和相应的约束通过引入一组双变量。方程中的最大双重函数（8）具有以下形式： <br>
  ![10-10](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-10.png) 
  
 根据解决二次规划问题的Karush-Kuhn-Tucker（KKT）条件，式（11）中的（αi-α* i） （11），其中只有一些将被视为非零值。这些关于非零系数的数据点，其近似误差将等于或大于ε，被称为支持向量。直观地说，当接受低于ε的误差时，位于所谓的“ε-管”内的训练数据点对问题解决方案没有影响（换句话说，轻微移动它们的位置不会扰乱解决方案）。从某种意义上说，问题的复杂性与输入空间W无关，而仅取决于支持向量的数量。通常，ε值决定了支持向量的数量，它代表了解决方案的稀疏级别。
 
 #### 2.2.2 内核技巧
-对偶公式也是将支持向量机扩展到非线性函数的关键，SVR的这个特点被称为“核心技巧”[28]。等式（12）中的点积{xi，xj}对于非线性情况成为核函数{ф（xi），ф（xj）}- K（xi，xj）。这是通过函数ф：W→F将输入模式映射到高维空间F。如果一个函数可以满足Mercer的条件，那么它可以用作核函数[21]。在这项研究中，我们讨论了使用径向基核
+对偶公式也是将支持向量机扩展到非线性函数的关键，SVR的这个特点被称为“核心技巧”[28]。等式（12）中的点积{xi，xj}对于非线性情况成为核函数{ф（xi），ф（xj）}- K（xi，xj）。这是通过函数ф：W→F将输入模式映射到高维空间F。如果一个函数可以满足Mercer的条件，那么它可以用作核函数[21]。在这项研究中，我们讨论了使用径向基核 <br>
   ![10-11](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-11.png) 
   
 一个无限维映射空间对应于它。
@@ -66,36 +67,36 @@ b兰州大学数学与统计学院，甘肃兰州730000
 我们的K-OTS方法是一种基于实例的算法，将最不常见的对象分配给子集。通常使用欧几里得距离作为距离度量，也可以使用另一个度量，例如重叠度量（或汉明距离）。所以更远的点比更近的点包含更多的信息。算法的训练阶段包括获得训练子集和训练SVR算法。在预测阶段，基于OTS的SVR预测测试点。为了获得表示训练集的最大信息的K个元素，称为K-OTS算法，实现了以下简单的伪代码。
 输入：T=〖（x_i，y_i）〗_(i=1)^n   ,训练数据集; n，独立样本数量; K，训练子集的数量; X0，训练子集的初始元素。
 输出：OTS，K-最佳训练子集。
-终止条件：培训子集的数量达到K.
+终止条件：培训子集的数量达到K. <br>
  ![10-12](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-12.png) 
  
 找到最合适的K值的关键问题将在以下小节中详细解决。
 
 ### 2.4 一种近似凸性优化框架的最佳训练子集
 令T =（X1，y1），...，（Xn，yn）是完整的训练集。 Xis是输入值，而yis是系统的相应输出值。
-最优训练子集尽可能少的点数，包含完整训练集的最大信息，可以概括为以下优化问题：
+最优训练子集尽可能少的点数，包含完整训练集的最大信息，可以概括为以下优化问题： <br>
  ![10-13](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-13.png)
  
 其中m，n分别是最优训练子集和全训练集合T的大小，MAPE（m，T）是基于m的最优训练子集的SVR的平均绝对误差百分比（MAPE）；该λ是调整参数控制最优训练子集的大小和MAPE（m，T）之间的折衷（即预测准确性）。在等式（15）中，第一项表示OTS的浓度比，第二项表示基于OTS的拟议模型的预测精度。模型应该首先考虑模型的准确性，那么λ一般设置为相对较小的数字。大λ是，我们更关注OTS的规模。特别地，如果我们设置更适合小型OTS的λ = 0，那么所提出的模型将会得到最小误差而不考虑OTS的大小。在实践中，人们可以使用经验规则来粗略调整λ 的值。
-寻找上述问题的确切解决方案在计算上很难。已经开发了基于K-OTS的近似方法和目标函数f（m）的性质。通常，有用信息随着值m的增加而增加，冗余信息也增加;有用信息一开始占主导地位，随后逆转。我们认为目标函数是变量m的连续函数。因此，以下属性直观地成立： 
+寻找上述问题的确切解决方案在计算上很难。已经开发了基于K-OTS的近似方法和目标函数f（m）的性质。通常，有用信息随着值m的增加而增加，冗余信息也增加;有用信息一开始占主导地位，随后逆转。我们认为目标函数是变量m的连续函数。因此，以下属性直观地成立：  <br>
  ![10-14](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-14.png) 
  
-在f(m)上使用上述属性，有
+在f(m)上使用上述属性，有 <br>
  ![10-15](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-15.png) 
  
 作者还提供了一种通过最小化优化目标函数来找到最佳训练子集的经验方法。
 利用这种凸性，从整个训练集中获得最小尺寸的最优子集变得更容易和更快。我们提出求解m的三个初始值的最优训练子集，从而通过训练SVR模型来计算相应的目标函数值。从实际的角度来看，我们提供了一个稳定的迭代方案和模型覆盖标准，并且调整m的更多初始值要容易得多。事实上，没有凸性，解决方案可能会达到局部最小值。用于计算最小最优训练子集的迭代算法，其缩写为OTS-SVR，可归纳如下：
 输入：T=〖（x_i，y_i）〗_(i=1)^n，训练数据集; n，独立样本的数量; m1，m2，m3，最佳训练子集的三个初始尺寸值; X0，最佳训练子集的初始元素。
 输出：m：最佳训练子集的收敛大小值。
-终止条件：max（m1，m2，m3） - min（m1，m2，m3）= 0或迭代次数大于n / 2。
+终止条件：max（m1，m2，m3） - min（m1，m2，m3）= 0或迭代次数大于n / 2。 <br>
  ![10-16](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-16.png) 
  
 Sayre和Poore [29]提出了多种停止统计测试的标准，并且我们根据m的三个值已经收敛到相同的值的程度来选择模型覆盖标准。以下实验研究中的收敛性进一步证明了优化框架的凸性。
 电负载的行为不容易被捕获。它具有各种非线性特征。受SVR模型的启发，仅对小样本具有强大的非线性学习能力，因此，具有大样本和非线性建模能力的策略是预测电负载的好选择。首先，作者提出了K-OTS算法从2.3节讨论的训练集中提取具有最大信息特征的K个元素。然后，如上所述，让OTS-SVR算法获得预测过程的最小OTS。研究框架如下：
-第1步：使用数据预处理公式（5）产生一个规范化系列，它将数据在指定的范围内线性地映射。
+第1步：使用数据预处理公式（5）产生一个规范化系列，它将数据在指定的范围内线性地映射。 <br>
  ![10-17](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-17.png) 
  
-步骤2：考虑步骤1中预处理数据的相空间构造。
+步骤2：考虑步骤1中预处理数据的相空间构造。 <br>
 ![10-18](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-18.png) 
 
 步骤3：将步骤2中的相位空间放入训练集作为OTS-SVR算法的输入，并获得OTS。
@@ -109,57 +110,57 @@ OTS-SVR模型受到一些参数的影响，涉及三个不同的领域。第一�
 
 ### 3.1 案例分析
 新南威尔士州的电力负荷数据每半小时收集一次（每天48个数据点）（见图1）。为了公平比较，在实验中选择具有小，中和大样本量的数据集。在第一个实验中，2007年5月3日至2007年5月4日，分别使用标准SVR和新算法训练新南威尔士电力负荷，并使用2007年5月5日的电力负荷进行测试（小样本量： 144个数据点）。在第二个实验中，上述两个模型分别由2007年5月2日至2007年5月14日在新南威尔士州的电力负荷训练。然后，我们从2007年5月15日至2007年5月21日进行一周预测（中等样本量：960个数据点）。在第三个实验中，使用具有31天（1488个数据点）的数据集来评估所提出的模型在大样本量预测中的适用性，即故意不选择小样本大小的数据集。为了构建所考虑数据的预测模型，可用信息包括负载预测2天之前29天的半小时历史负载数据。非常大的训练集不应该与标准的SVR算法进行比较，因为它很费时并且可能在学习过程中过度训练。
-前两个实验是证明我们的新算法与现有的SVR算法相比，在中小样本情况下的优越性和有效性，而最后一个实验是显示大样本量情况下的适用性和集中率。表1中显示了模型中使用的参数。
+前两个实验是证明我们的新算法与现有的SVR算法相比，在中小样本情况下的优越性和有效性，而最后一个实验是显示大样本量情况下的适用性和集中率。表1中显示了模型中使用的参数。 <br>
  ![10-19](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-19.png)
  
 图1. 2007年5月1日至2007年6月1日新南威尔士州的半小时电力负荷。
 ### 3.2 模型评估方法
-为了评估预测能力，我们采用三种不同的统计指标来检验预测精度：均方根误差（RMSE），平均绝对误差（MAE）和平均绝对误差百分比（MAPE）。他们可以表达如下：
+为了评估预测能力，我们采用三种不同的统计指标来检验预测精度：均方根误差（RMSE），平均绝对误差（MAE）和平均绝对误差百分比（MAPE）。他们可以表达如下： <br>
  ![10-20](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-20.png) 
 Pi和Ai分别是第i个预测值和实际值，n是预测总数。
-为了评估OTS的大小，浓缩比（CR）定义如下：
+为了评估OTS的大小，浓缩比（CR）定义如下： <br>
  ![10-21](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-21.png)
  
 其中m是OTS的大小，n是训练集的总大小。
 
 ## 4 实证结果与分析
-我们详细描述了新SVR框架的思想，算法和过程的基础。通过构造逼近凸性优化目标函数来计算所提出的最优训练子集，可以建立中等或大样本尺寸的新SVR模型。现在，为了评估所提出的算法的性能，我们使用标准SVR模型和所提出的新的SVR模型对三个不同样本大小数据集上的预测电负载值进行比较，然后显示不同样本下的适用性和浓度比大小的情况。
+我们详细描述了新SVR框架的思想，算法和过程的基础。通过构造逼近凸性优化目标函数来计算所提出的最优训练子集，可以建立中等或大样本尺寸的新SVR模型。现在，为了评估所提出的算法的性能，我们使用标准SVR模型和所提出的新的SVR模型对三个不同样本大小数据集上的预测电负载值进行比较，然后显示不同样本下的适用性和浓度比大小的情况。 <br>
   ![10-22](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-22.png) 
   ![10-23](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-23.png) 
   
-图2. OTS-SVR模型的预测电力负荷，第一组训练集的标准SVR和原始数据以及相应的误差的比较。 （第一套培训是2007年5月3日至2007年5月4日在新南威尔士州的电力负荷数据。）
+图2. OTS-SVR模型的预测电力负荷，第一组训练集的标准SVR和原始数据以及相应的误差的比较。 （第一套培训是2007年5月3日至2007年5月4日在新南威尔士州的电力负荷数据。） <br>
   ![10-24](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-24.png) 
   
 图3. OTS-SVR模型预测的电力负荷，第一套测试集的标准SVR和原始数据以及相应误差的比较。 （第一套测试集是2007年5月5日在新南威尔士州的电力负载数据。）
 在第一个实验中，我们提出的SVR模型优于标准SVR模型。在附图中，在图2和图3中，分别显示了标准SVR模型和新SVR模型下的训练和预测结果。绝对误差也显示在相应的图中。在训练阶段，新SVR的训练误差稍好于SVR的训练误差，如图2所示。这是因为SVR的稍微过度拟合是由第一个数据集中的冗余训练样本造成的。预测结果见图3.我们可以看到，我们的新SVR算法提供了比标准SVR算法更准确的预测。尽管改进表明最优子集提取最小样本量训练集的最大信息并不具有统计意义，但我们的新算法确实在这种情况下取得了较好的结果。请注意，我们的OTS-SVR算法放弃了冗余信息，并导致更好的统计解释。
-在第二个实验中，我们进行了中等样本量的比较实验。为了解决大尺寸复杂性的问题，我们设置了一个相对较大的值λ（λ= 0.37086）。本研究旨在展示中等样本量情况下的适用性和浓度比，因此更关注方程式的第一部分。4和5获得了类似的结果。。
+在第二个实验中，我们进行了中等样本量的比较实验。为了解决大尺寸复杂性的问题，我们设置了一个相对较大的值λ（λ= 0.37086）。本研究旨在展示中等样本量情况下的适用性和浓度比，因此更关注方程式的第一部分。4和5获得了类似的结果。 <br>
   ![10-25](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-25.png) 
   
-图4. OTS-SVR模型的预测电力负荷，第二套训练集的标准SVR和原始数据以及相应误差的比较。 （第二套训练集是2007年5月2日至2007年5月14日在新南威尔士州的电力负载数据。）
+图4. OTS-SVR模型的预测电力负荷，第二套训练集的标准SVR和原始数据以及相应误差的比较。 （第二套训练集是2007年5月2日至2007年5月14日在新南威尔士州的电力负载数据。） <br>
   ![10-26](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-26.png)
   
 图5. OTS-SVR模型的预测电力负荷，第二套测试装置的标准SVR和原始数据以及相应的误差的比较。 （第二套测试套件是2007年5月15日至2007年5月21日在新南威尔士的电力负载数据。）
 图5显示了一个星期的预测来看长期预测。所提出的新SVR模型的预测曲线比标准SVR模型更适合全时间序列，这表明了我们最优训练子集的价值。
 如果训练集规模太大，调查标准SVR算法可能是不切实际的，因为它需要太多时间才能得到结果（在这种情况下，其运行时间大于100800s）。因此，第三个大样本量的实验仅由所提出的新的SVR模型来执行。第三个实验的主要目标是显示大样本量情况下的适用性和浓度比。
 第三个实验显示这种情况提前2天预测。根据我们先前的论点，OTS-SVR模型可以获得用于SVR训练的OTS。这种OTS可以大幅度降低模型的复杂性并克服一些计算困难，而优化框架设计可以帮助我们找到OTS的最佳尺寸值。这个实验的详细预测结果如图6和7所示。
-值得指出的是，λ可能会影响我们新的SVR算法的性能。对于不同的λ值，我们可以控制两个优化框架之间的权衡。λ越大，我们就越关注最优训练子集的大小。所以，如果我们设置λ = 0，所提出的SVR在不考虑最优训练子集的大小的情况下将得到最小训练误差，并且将更适合于回归。在实践中，可以根据他的经验规则大致调整价值。
+值得指出的是，λ可能会影响我们新的SVR算法的性能。对于不同的λ值，我们可以控制两个优化框架之间的权衡。λ越大，我们就越关注最优训练子集的大小。所以，如果我们设置λ = 0，所提出的SVR在不考虑最优训练子集的大小的情况下将得到最小训练误差，并且将更适合于回归。在实践中，可以根据他的经验规则大致调整价值。 <br>
   ![10-27](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-27.png) 
   
-图6. OTS-SVR模型预测的电力负荷与第三套训练集的原始数据及相应误差的比较。 （第三套训练集是2007年5月1日至2007年5月29日在新南威尔士州的电力负载数据。）
+图6. OTS-SVR模型预测的电力负荷与第三套训练集的原始数据及相应误差的比较。 （第三套训练集是2007年5月1日至2007年5月29日在新南威尔士州的电力负载数据。） <br>
   ![10-28](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-28.png) 
   
 图7. OTS-SVR模型预测的电力负荷与第三组测试的原始数据和相应的误差的比较。 （第三套测试是2007年5月30日至2007年5月31日在新南威尔士的电力负载数据。）
 通过给出参数m生成8-10，不同的初始值从m = 1到m = N（N是完整训练集的数目）变化。 对于m的不同初始值，我们获得最优训练子集的最小数目。由于在我们的K-OTS方法中给出了相同的初始元素，相同尺寸的最优训练子集指示相同的最优训练子集。不同初始值的图似乎很快变平，这表明我们的方法随着迭代次数变大而收敛。
-在表2中，应用了ANOVA的单向阻塞设计。 测试假设定义如下：
+在表2中，应用了ANOVA的单向阻塞设计。 测试假设定义如下： <br>
   ![10-29](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-29.png) 
   
- 图8.第一优化训练子集的最小尺寸图：[左] m1 = 6，m2 = 16，m3 = 47; [center] m1 = 8，m2 = 19，m3 = 47; [右] m1 = 18，m2 = 28，m3 = 41。如图所示，随着迭代次数的增加，收敛达到相当快。
+ 图8.第一优化训练子集的最小尺寸图：[左] m1 = 6，m2 = 16，m3 = 47; [center] m1 = 8，m2 = 19，m3 = 47; [右] m1 = 18，m2 = 28，m3 = 41。如图所示，随着迭代次数的增加，收敛达到相当快。 <br>
  ![10-30](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-30.png) 
  
-图9.第二优化训练子集的最小尺寸图：[左] m1 = 31，m2 = 52，m3 = 104; [center] m1 = 8，m2 = 21，m3 = 41; [右] m1 = 12，m2 = 21，m3 = 62。如图所示，随着迭代次数的增加，收敛速度相当快。
+图9.第二优化训练子集的最小尺寸图：[左] m1 = 31，m2 = 52，m3 = 104; [center] m1 = 8，m2 = 21，m3 = 41; [右] m1 = 12，m2 = 21，m3 = 62。如图所示，随着迭代次数的增加，收敛速度相当快。 <br>
   ![10-31](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-31.png) 
   
-图10.第三优化训练子集的最小尺寸图：[左] m1 = 18，m2 = 26，m3 = 53; [center] m1 = 56，m2 = 28，m3 = 14; [右] m1 = 76，m2 = 31，m3 = 9。如图所示，随着迭代次数增加，收敛达到相当快
+图10.第三优化训练子集的最小尺寸图：[左] m1 = 18，m2 = 26，m3 = 53; [center] m1 = 56，m2 = 28，m3 = 14; [右] m1 = 76，m2 = 31，m3 = 9。如图所示，随着迭代次数增加，收敛达到相当快 <br>
   ![10-32](https://github.com/GrowingGardenia/Information-Security-Paper-Reading/blob/master/picture/10-32.png) 
 其中µ1,µ2和µ3是从实际数据，标准SVR和所提出的新SVR获得的平均值，其值在图3和5中示出。
 从表2可以看出，最高达到α=0.05，F0.05,1.94 = 3.94，F0.05,1.334 = 3.84，在小样本情况下，F0 = 1.823,0.007 <3.94，这意味着µ1 = µ2，µ1 = µ3是真的。然而，在中等样本情况下，F0 = 4.291> 3.84，这意味着µ1！= µ2.该结果表明在中等样本情况下，原始数据与SVR模型之间存在显着差异。因此，在这种情况下，OTS-SVR模型显着优于标准SVR模型。
@@ -176,36 +177,36 @@ Pi和Ai分别是第i个预测值和实际值，n是预测总数。
 ## References
 [1] J.T. Bernard, D. Bolduc, N.D. Yameogo, S. Rahman, A pseudo-panel data model of household electricity demand, Resource and Energy Economics 33 (2010) 315–325.<br>
 [2] F.H. Tay, L.J. Cao, Application of support vector machines in financial time series forecasting, Omega 29 (4) (2001) 309–317.
-[3] K.J. Kim, Financial time series forecasting using support vector machines, Neurocomputing 55 (1–2) (2003) 307–319.
-[4] M. Zhang, L. Fu, Unbiased least squares support vector machine with polynomial kernel, in: 8th IEEE International Conference on Signal Processing (ICSP-2006), vol. 3, Guilin, China, 2006, pp. 16–20.
-[5] S. Osowski, K. Garanty, Forecasting of the daily meteorological pollution using wavelets and support vector machine, Engineering Applications of Articial Intelligence 20 (6) (2007) 745–755.
-[6] T.W. Quan, X.M. Liu, Q. Liu, Weighted least squares support vector machine local region method for nonlinear time series prediction, Applied Soft Computing 10 (2) (2010) 562–566.
-[7] P.F. Pai, W.C. Hong, Forecasting regional electricity load based on recurrent support vector machines with genetic algorithms, Electric Power Systems Research 74 (3) (2005) 417–425.
-[8] Y. Zhan, H.Z. Cheng, A robust support vector algorithm for harmonic and interharmonic analysis of electric power system, Electric Power Systems Research 73 (3) (2005) 393–400.
-[9] A. Chaudhuri, K. De, Fuzzy support vector machine for bankruptcy prediction, Applied Soft Computing 11 (2) (2011) 2472–2486. 
-[10] H.T. Pao, Forecasting energy consumption in Taiwan using hybrid nonlinear models, Energy 34 (10) (2009) 1438–1446.
-[11] J.Z. Wang, W.J. Zhu, W.Y. Zhang, D.H. Sun, A trend fixed on firstly and seasonal adjustment model combined with the e-SVR for short-term forecasting of electricity demand, Energy Policy 37 (2009) 4901–4909.
-[12] L.Y. Chuang, C.H. Yang, J.C. Li, Chaotic maps based on binary particle swarm optimization for feature selection, Applied Soft Computing 11 (2009) 239–248.
-[13] S.P. Moustakidis, J.B. Theocharis, SVM-FuzCoC. A novel SVM-based feature selection method using a fuzzy complementary criterion, Pattern Recognition 43 (11) (2010) 3712–3729.
-[14] W.Z. Yang, D.L. Li, L. Zhu, An improved genetic algorithm for optimal feature subset selection from multi-character feature set, Expert Systems with Applications 38 (3) (2011) 2733–2740.
-[15] T.M. Hamdani, J.M. Won, A.M. Alimi, F. Karray, Hierarchical genetic algorithm with new evaluation function and bi-coded representation for the selection of features considering their confidence rate, Applied Soft Computing 11 (2) (2011) 2501–2509.
-[16] M. Yang, P. Yang, A novel approach to improving C-Tree for feature selection, Applied Soft Computing 11 (2) (2011) 1924–1931.
-[17] T. Warren Liao, Diagnosis of bladder cancers with small sample size via feature selection, Expert Systems with Applications 38 (4) (2011) 4649–4654.
-[18] F. Takens, Detecting strange attractors in turbulence, Dynamical Systems 11 (1981) 366–381.
-[19] L.B. Yann-Aël, S. Silvia, B. Gianluca, Adaptive model selection for time series prediction in wireless sensor networks, Signal Process 12 (87) (2007) 3010– 3020.
-[20] H.M. Liu, H.Q. Wang, X. Li, A study on data normalization for target recognition based on RPROP algorithm, Modern Radar 31 (5) (2009) 55–60.
-[21] B.E. Boser, I.M. Guyon, V.N. Vapnik, A training algorithm for optimal margin classifiers, in: ACMCOLT’92, Pittsburgh, PA, 1992, pp. 144–152.
-[22] A.J. Smola, B. Scholkopf, A tutorial on support vector regression Statistics and Computing, vol. 14, Kluwer Academic Pub., 2004, pp. 199–222.
-[23] C.J.C. Burges, A tutorial on support vector machines for pattern recognition, Journal of Database Management 2 (1998) 121–167.
-[24] D.N. Zheng, J.X. Wang, Y.N. Zhao, Non-flat function estimation with a multi-scale support vector regression, Neurocomputing 70 (1–3) (2006) 420–429.
-[25] N. Cristianini, J. Shawe-Taylor, An Introduction to Support Vector Machines and Other Kernel-based Learning Methods, Cambridge University Press, New York, NY, 1999.
-[26] Y.P. Zhao, J.G. Sun, Robust support vector regression in the primal, Neural Networks 21 (10) (2008) 1548–1555.
-[27] V. Vapnik, The Nature of Statistical Learning Theory, Springer, NY, 1995.
-[28] M. Aizerman, E. Braverman, L. Rozonoer, Theoretical foundations of the potential function method in pattern recognition learning, Automation and Remote Control 25 (1964) 821–837.
-[29] K. Sayre, J.H. Poore, Stopping criteria for statistical testing, Information and Software Technology 42 (12) (2000) 851–857.
-[30] J.W. Li, Z.H. Cai, A novel automatic parameters optimization approach based on differential evolution for support vector regression, Lecture Notes in Computer Science 5370 (2008) 510–519.
-[31] About MATLAB [Online]. Available from: http://www.mathworks.com/.
-[32] D.F. Li, W.C. Hu, W. Xiong, J.B. Yang, Fuzzy relevance vector machine for learning from unbalanced data and noise, Pattern Recognition Letters 29 (2008) 1175–1181.
+[3] K.J. Kim, Financial time series forecasting using support vector machines, Neurocomputing 55 (1–2) (2003) 307–319. <br>
+[4] M. Zhang, L. Fu, Unbiased least squares support vector machine with polynomial kernel, in: 8th IEEE International Conference on Signal Processing (ICSP-2006), vol. 3, Guilin, China, 2006, pp. 16–20. <br>
+[5] S. Osowski, K. Garanty, Forecasting of the daily meteorological pollution using wavelets and support vector machine, Engineering Applications of Articial Intelligence 20 (6) (2007) 745–755. <br>
+[6] T.W. Quan, X.M. Liu, Q. Liu, Weighted least squares support vector machine local region method for nonlinear time series prediction, Applied Soft Computing 10 (2) (2010) 562–566. <br>
+[7] P.F. Pai, W.C. Hong, Forecasting regional electricity load based on recurrent support vector machines with genetic algorithms, Electric Power Systems Research 74 (3) (2005) 417–425. <br>
+[8] Y. Zhan, H.Z. Cheng, A robust support vector algorithm for harmonic and interharmonic analysis of electric power system, Electric Power Systems Research 73 (3) (2005) 393–400. <br>
+[9] A. Chaudhuri, K. De, Fuzzy support vector machine for bankruptcy prediction, Applied Soft Computing 11 (2) (2011) 2472–2486.  <br>
+[10] H.T. Pao, Forecasting energy consumption in Taiwan using hybrid nonlinear models, Energy 34 (10) (2009) 1438–1446. <br>
+[11] J.Z. Wang, W.J. Zhu, W.Y. Zhang, D.H. Sun, A trend fixed on firstly and seasonal adjustment model combined with the e-SVR for short-term forecasting of electricity demand, Energy Policy 37 (2009) 4901–4909. <br>
+[12] L.Y. Chuang, C.H. Yang, J.C. Li, Chaotic maps based on binary particle swarm optimization for feature selection, Applied Soft Computing 11 (2009) 239–248. <br>
+[13] S.P. Moustakidis, J.B. Theocharis, SVM-FuzCoC. A novel SVM-based feature selection method using a fuzzy complementary criterion, Pattern Recognition 43 (11) (2010) 3712–3729. <br>
+[14] W.Z. Yang, D.L. Li, L. Zhu, An improved genetic algorithm for optimal feature subset selection from multi-character feature set, Expert Systems with Applications 38 (3) (2011) 2733–2740. <br>
+[15] T.M. Hamdani, J.M. Won, A.M. Alimi, F. Karray, Hierarchical genetic algorithm with new evaluation function and bi-coded representation for the selection of features considering their confidence rate, Applied Soft Computing 11 (2) (2011) 2501–2509. <br>
+[16] M. Yang, P. Yang, A novel approach to improving C-Tree for feature selection, Applied Soft Computing 11 (2) (2011) 1924–1931. <br>
+[17] T. Warren Liao, Diagnosis of bladder cancers with small sample size via feature selection, Expert Systems with Applications 38 (4) (2011) 4649–4654. <br>
+[18] F. Takens, Detecting strange attractors in turbulence, Dynamical Systems 11 (1981) 366–381. <br>
+[19] L.B. Yann-Aël, S. Silvia, B. Gianluca, Adaptive model selection for time series prediction in wireless sensor networks, Signal Process 12 (87) (2007) 3010– 3020. <br>
+[20] H.M. Liu, H.Q. Wang, X. Li, A study on data normalization for target recognition based on RPROP algorithm, Modern Radar 31 (5) (2009) 55–60. <br>
+[21] B.E. Boser, I.M. Guyon, V.N. Vapnik, A training algorithm for optimal margin classifiers, in: ACMCOLT’92, Pittsburgh, PA, 1992, pp. 144–152. <br>
+[22] A.J. Smola, B. Scholkopf, A tutorial on support vector regression Statistics and Computing, vol. 14, Kluwer Academic Pub., 2004, pp. 199–222. <br>
+[23] C.J.C. Burges, A tutorial on support vector machines for pattern recognition, Journal of Database Management 2 (1998) 121–167. <br>
+[24] D.N. Zheng, J.X. Wang, Y.N. Zhao, Non-flat function estimation with a multi-scale support vector regression, Neurocomputing 70 (1–3) (2006) 420–429. <br>
+[25] N. Cristianini, J. Shawe-Taylor, An Introduction to Support Vector Machines and Other Kernel-based Learning Methods, Cambridge University Press, New York, NY, 1999. <br>
+[26] Y.P. Zhao, J.G. Sun, Robust support vector regression in the primal, Neural Networks 21 (10) (2008) 1548–1555. <br>
+[27] V. Vapnik, The Nature of Statistical Learning Theory, Springer, NY, 1995. <br>
+[28] M. Aizerman, E. Braverman, L. Rozonoer, Theoretical foundations of the potential function method in pattern recognition learning, Automation and Remote Control 25 (1964) 821–837. <br>
+[29] K. Sayre, J.H. Poore, Stopping criteria for statistical testing, Information and Software Technology 42 (12) (2000) 851–857. <br>
+[30] J.W. Li, Z.H. Cai, A novel automatic parameters optimization approach based on differential evolution for support vector regression, Lecture Notes in Computer Science 5370 (2008) 510–519. <br>
+[31] About MATLAB [Online]. Available from: http://www.mathworks.com/. <br>
+[32] D.F. Li, W.C. Hu, W. Xiong, J.B. Yang, Fuzzy relevance vector machine for learning from unbalanced data and noise, Pattern Recognition Letters 29 (2008) 1175–1181. <br>
 
 
 
